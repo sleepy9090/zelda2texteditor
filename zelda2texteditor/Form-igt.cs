@@ -45,8 +45,6 @@ namespace zelda2texteditor
             {
                 filename = value;
             }
-
-            
         }
 
         

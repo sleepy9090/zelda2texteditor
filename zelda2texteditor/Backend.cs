@@ -45,11 +45,10 @@ namespace zelda2texteditor {
             // TODO: Optimize, all of these steps are unneccesary
             string newZString = textBox.Text;
 
-            Console.WriteLine("newEBString: " + newZString);
+            //Console.WriteLine("newEBString: " + newZString);
 
             newZString = newZString.PadRight(length);
             string hexReturn = "";
-            string tempascii = "";
             string[] newZStringArray = new string[length];
             byte[] newZStringByteArray = new byte[length];
             int[] zDecimal = new int[length];
@@ -59,8 +58,8 @@ namespace zelda2texteditor {
             int x = 0;
             while (x < length) {
                 newZStringArray[x] = newZString[x].ToString();
-                tempascii = newZStringArray[x];
-                hexReturn += encodeRomText(tempascii);
+                string tempAscii = newZStringArray[x];
+                hexReturn += encodeRomText(tempAscii);
                 x++;
             }
 
