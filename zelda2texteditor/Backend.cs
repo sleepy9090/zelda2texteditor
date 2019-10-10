@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/**
+ * @file           Backend.cs
+ * @brief          Class to handle common methods used to read/write the ROM.
+ *
+ * @copyright      Shawn M. Crawford
+ * @date           10/10/2019
+ *
+ * @remark Author  Shawn M. Crawford
+ *
+ * @note           N/A
+ * 
+ */
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
 namespace zelda2texteditor {
 
-    /*
-     * Backend class to handle common methods used to read/write the ROM.
-     */
+/** @brief Backend class to handle common methods used to read/write the ROM. */
     class Backend {
         int textFlag = 0;
+        private string fullFilename;
 
-        public void getText(string path, TextBox texboxname, int length, int offset) {
+        public Backend(string fullFilename)
+        {
+            this.fullFilename = fullFilename;
+        }
+
+        public string getText(int length, int offset) {
 
             string romCodeString = "";
             string excitebikeAsciiOut = "";
             string tempHexString = "";
             int x = 0;
-            FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
+            FileStream fileStream = new FileStream(fullFilename, FileMode.Open, FileAccess.Read);
             fileStream.Seek(offset, SeekOrigin.Begin);
 
             while (x < length) {
@@ -35,17 +46,14 @@ namespace zelda2texteditor {
                     excitebikeAsciiOut += decodeRomText(tempHexString);
                 }
                 x++;
-
-                texboxname.Text = excitebikeAsciiOut;
             }
             fileStream.Close();
+            return excitebikeAsciiOut;
         }
 
-        public void updateROMText(string absoluteFilename, int length, TextBox textBox, int offset) {
+        public void updateROMText(int length, string newZString, int offset) {
             // TODO: Optimize, all of these steps are unneccesary
-            string newZString = textBox.Text;
-
-            //Console.WriteLine("newEBString: " + newZString);
+            
 
             newZString = newZString.PadRight(length);
             string hexReturn = "";
@@ -79,7 +87,7 @@ namespace zelda2texteditor {
                 q++;
             }
 
-            using (FileStream fileStream = new FileStream(@absoluteFilename, FileMode.Open, FileAccess.Write)) {
+            using (FileStream fileStream = new FileStream(fullFilename, FileMode.Open, FileAccess.Write)) {
                 fileStream.Seek(offset, SeekOrigin.Begin);
                 q = 0;
                 while (q < length) {

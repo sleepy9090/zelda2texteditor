@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form2_igt
+    partial class FormGeneral
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2_igt));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeneral));
             this.igt1TextBox = new System.Windows.Forms.TextBox();
             this.igt2TextBox = new System.Windows.Forms.TextBox();
             this.igt3TextBox = new System.Windows.Forms.TextBox();
@@ -2916,7 +2916,7 @@
             this.panel2.Size = new System.Drawing.Size(1341, 906);
             this.panel2.TabIndex = 1;
             // 
-            // Form2_igt
+            // FormGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2926,9 +2926,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.Name = "Form2_igt";
+            this.Name = "FormGeneral";
             this.Text = "In Game Text";
-            this.Load += new System.EventHandler(this.Form2_igt_Load);
+            this.Load += new System.EventHandler(this.FormGeneral_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿/**
+ * @file           FormCredits.cs
+ * @brief          Creates the form for changing text for credits.
+ *
+ * @copyright      Shawn M. Crawford
+ * @date           10/10/2019
+ *
+ * @remark Author  Shawn M. Crawford
+ *
+ * @note           N/A
+ * 
+ */
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace zelda2texteditor
 {
-    public partial class Form_gct : Form
+    public partial class FormCredits : Form
     {
-        public Form_gct()
+        public string FullFilename { get; set; }
+
+        public FormCredits()
         {
             InitializeComponent();
         }
@@ -21,19 +29,9 @@ namespace zelda2texteditor
         string temphex, tempascii;
         int textFlag = 0;
 
-        public string fntootherform
-        {
-            get
-            {
-                return filename;
-            }
-            set
-            {
-                filename = value;
-            }
-        }
+        
 
-        private void Form_gct_Load(object sender, EventArgs e)
+        private void FormCredits_Load(object sender, EventArgs e)
         {
             //textbox length
             gctextBox1.MaxLength = 0x3;

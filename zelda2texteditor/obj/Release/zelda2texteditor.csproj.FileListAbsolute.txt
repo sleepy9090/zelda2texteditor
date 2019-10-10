@@ -32,10 +32,11 @@ C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2textedi
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Form2_igt.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Form_ramt.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Form_st.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Form_tn.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Form1.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Properties.Resources.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csproj.GenerateResource.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csproj.CoreCompileInputs.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.exe
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.pdb
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csprojAssemblyReference.cache
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormLocations.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormZelda2nesRomEditor.resources

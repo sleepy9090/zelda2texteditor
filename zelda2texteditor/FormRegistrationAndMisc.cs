@@ -1,18 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿/**
+ * @file           FormRegistrationAndMisc.cs
+ * @brief          Creates the form for changing registration and misc text.
+ *
+ * @copyright      Shawn M. Crawford
+ * @date           10/10/2019
+ *
+ * @remark Author  Shawn M. Crawford
+ *
+ * @note           N/A
+ * 
+ */
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace zelda2texteditor
 {
-    public partial class Form_st : Form
+    public partial class FormRegistrationAndMisc : Form
     {
-        public Form_st()
+
+        public string FullFilename { get; set; }
+
+        public FormRegistrationAndMisc()
         {
             InitializeComponent();
         }
@@ -21,69 +30,53 @@ namespace zelda2texteditor
         string temphex, tempascii;
         int textFlag = 0;
 
-        public string fntootherform
-        {
-            get
-            {
-                return filename;
-            }
-            set
-            {
-                filename = value;
-            }
-        }
-
-        private void Form_st_Load(object sender, EventArgs e)
+        private void FormRegistrationAndMisc_Load(object sender, EventArgs e)
         {
 
-
-            esp1TextBox.MaxLength = 11;
-            esp2TextBox.MaxLength = 11;
-            esp3TextBox.MaxLength = 11;
-            esp4TextBox.MaxLength = 11;
-            esp5TextBox.MaxLength = 11;
-            esp6TextBox.MaxLength = 9;
-            esp7TextBox.MaxLength = 11;
-            esp8TextBox.MaxLength = 11;
-
-            ws1TextBox.MaxLength = 0x9;
-            ws1bTextBox.MaxLength = 0xa;
-            ws1cTextBox.MaxLength = 0xa;
-            ws1dTextBox.MaxLength = 0xa;
-
-            ws2TextBox.MaxLength = 0x9;
-            ws2bTextBox.MaxLength = 0x7;
-            ws2cTextBox.MaxLength = 0x9;
-            ws2dTextBox.MaxLength = 0x5;
-
-            ws3TextBox.MaxLength = 0x8;
-            ws3bTextBox.MaxLength = 0x8;
-            ws3cTextBox.MaxLength = 0x7;
-            ws3dTextBox.MaxLength = 0xa;
-
-            ws4TextBox.MaxLength = 0xa;
-            ws4bTextBox.MaxLength = 0x9;
-            ws4cTextBox.MaxLength = 0x8;
-            ws4dTextBox.MaxLength = 0x6;
-
-            ws5TextBox.MaxLength = 0xa;
-            ws5bTextBox.MaxLength = 0x9;
-            ws5cTextBox.MaxLength = 0xa;
-            ws5dTextBox.MaxLength = 0xa;
-
-            ws6TextBox.MaxLength = 0xa;
-            ws6bTextBox.MaxLength = 0x4;
-            ws6cTextBox.MaxLength = 0xa;
-            ws6dTextBox.MaxLength = 0x9;
-
-            ws7TextBox.MaxLength = 0x8;
-            ws7bTextBox.MaxLength = 0x9;
-            ws7cTextBox.MaxLength = 0x5;
-
-            ws8TextBox.MaxLength = 0xa;
-            ws8bTextBox.MaxLength = 0x8;
-            ws8cTextBox.MaxLength = 0x8;
-            ws8dTextBox.MaxLength = 0x6;
+            m1TextBox.MaxLength = 0xa;
+            m2TextBox.MaxLength = 0xf;
+            m3TextBox.MaxLength = 0x4;
+            m4TextBox.MaxLength = 0x6;
+            m5TextBox.MaxLength = 0x5;
+            m6TextBox.MaxLength = 0x4;
+            m7TextBox.MaxLength = 0x4;
+            m8TextBox.MaxLength = 0x6;
+            m9TextBox.MaxLength = 0xb;
+            m10TextBox.MaxLength = 0x6;
+            m11TextBox.MaxLength = 0x7;
+            m12TextBox.MaxLength = 0x3;
+            m12bTextBox.MaxLength = 0x3;
+            m12cTextBox.MaxLength = 0x2;
+            m13TextBox.MaxLength = 0x3;
+            m13bTextBox.MaxLength = 0x3;
+            m13cTextBox.MaxLength = 0x2;
+            m14TextBox.MaxLength = 0x3;
+            m14bTextBox.MaxLength = 0x3;
+            m14cTextBox.MaxLength = 0x2;
+            m15TextBox.MaxLength = 0x12;
+            m16TextBox.MaxLength = 0x10;
+            m17TextBox.MaxLength = 0x13;
+            m18TextBox.MaxLength = 0x3;
+            m19TextBox.MaxLength = 0x15;
+            m20TextBox.MaxLength = 0x15;
+            m21TextBox.MaxLength = 0xb;
+            m22TextBox.MaxLength = 0x13;
+            m23TextBox.MaxLength = 0x11;
+            m24TextBox.MaxLength = 0x3;
+            m25TextBox.MaxLength = 0x1c;
+            m26TextBox.MaxLength = 0xa;
+            m27TextBox.MaxLength = 0x10;
+            m28TextBox.MaxLength = 0x6;
+            m29TextBox.MaxLength = 0x5;
+            m30TextBox.MaxLength = 0x4;
+            m31TextBox.MaxLength = 0x8;
+            m32TextBox.MaxLength = 0x4;
+            m33TextBox.MaxLength = 0x7;
+            m34TextBox.MaxLength = 0x16;
+            m35TextBox.MaxLength = 0xb;
+            m36TextBox.MaxLength = 0xa;
+            m37TextBox.MaxLength = 0x16;
+            m38TextBox.MaxLength = 0x16;
 
             string rctext = "";
             string zeldaAsciiRet = "";
@@ -91,7 +84,175 @@ namespace zelda2texteditor
 
 
             FileStream fs1 = new FileStream(@filename, FileMode.Open, FileAccess.Read);
-            fs1.Seek(0x1C3A, SeekOrigin.Begin);   
+            fs1.Seek(0x0013, SeekOrigin.Begin);
+            while (x < 0xa)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m1TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x0020, SeekOrigin.Begin);
+            while (x < 0xf)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m2TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1BE5, SeekOrigin.Begin);
+            while (x < 0x4)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m3TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1BF9, SeekOrigin.Begin);
+            while (x < 0x6)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m4TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1C07, SeekOrigin.Begin);
+            while (x < 0x5)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m5TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1C15, SeekOrigin.Begin);
+            while (x < 0x4)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m6TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1C1E, SeekOrigin.Begin);
+            while (x < 0x2)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m7TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1C23, SeekOrigin.Begin);
+            while (x < 0x6)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m8TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C2C, SeekOrigin.Begin);
             while (x < 0xb)
             {
                 rctext = fs1.ReadByte().ToString("X");
@@ -108,15 +269,15 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            esp1TextBox.Text = zeldaAsciiRet;
+            m9TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //next spell
-            fs1.Seek(0x1C48, SeekOrigin.Begin);
-            while (x < 0xb)
+            fs1.Seek(0x17C4E, SeekOrigin.Begin);
+            while (x < 0x6)
             {
                 rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
                 if (rctext.Length == 1)
                 {
                     rctext = "0" + rctext;
@@ -129,242 +290,15 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            esp2TextBox.Text = zeldaAsciiRet;
+            m10TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //next spell
-            fs1.Seek(0x1C56, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp3TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //next spell
-            fs1.Seek(0x1C64, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp4TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //next spell
-            fs1.Seek(0x1C72, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp5TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //next spell
-            fs1.Seek(0x1C80, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp6TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //next spell
-            fs1.Seek(0x1C8E, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp7TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //next spell
-            fs1.Seek(0x1C9C, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            esp8TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //wizard1
-            fs1.Seek(0xE563, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws1TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE56D, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws1bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE578, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws1cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE583, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws1dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //wizard2
-            fs1.Seek(0xE68A, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws2TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE694, SeekOrigin.Begin);
+            fs1.Seek(0x17C57, SeekOrigin.Begin);
             while (x < 0x7)
             {
                 rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
                 if (rctext.Length == 1)
                 {
                     rctext = "0" + rctext;
@@ -377,12 +311,328 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws2bTextBox.Text = zeldaAsciiRet;
+            m11TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE69C, SeekOrigin.Begin);
-            while (x < 0x9)
+            fs1.Seek(0x17C62, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m12TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C66, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m12bTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C6A, SeekOrigin.Begin);
+            while (x < 0x2)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m12cTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+
+            fs1.Seek(0x17C70, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m13TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C74, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m13bTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C78, SeekOrigin.Begin);
+            while (x < 0x2)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m13cTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C7E, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m14TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C82, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m14bTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C86, SeekOrigin.Begin);
+            while (x < 0x2)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m14cTextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17C8B, SeekOrigin.Begin);
+            while (x < 0x12)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m15TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17CB2, SeekOrigin.Begin);
+            while (x < 0x10)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m16TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17CD7, SeekOrigin.Begin);
+            while (x < 0x13)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m17TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17CED, SeekOrigin.Begin);
+            while (x < 0x3)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m18TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17D13, SeekOrigin.Begin);
+            while (x < 0x15)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m19TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17D2B, SeekOrigin.Begin);
+            while (x < 0x15)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                //if length is single digit add a 0 ( 1 now is 01)
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m20TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x17D43, SeekOrigin.Begin);
+            while (x < 0xb)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -397,12 +647,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws2cTextBox.Text = zeldaAsciiRet;
+            m21TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE6A6, SeekOrigin.Begin);
-            while (x < 0x5)
+            fs1.Seek(0x17D51, SeekOrigin.Begin);
+            while (x < 0x13)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -417,13 +667,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws2dTextBox.Text = zeldaAsciiRet;
+            m22TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //wizard3
-            fs1.Seek(0xE7E9, SeekOrigin.Begin);
-            while (x < 0x8)
+            fs1.Seek(0x17D6D, SeekOrigin.Begin);
+            while (x < 0x11)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -438,12 +687,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws3TextBox.Text = zeldaAsciiRet;
+            m23TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE7F2, SeekOrigin.Begin);
-            while (x < 0x8)
+            fs1.Seek(0x17D81, SeekOrigin.Begin);
+            while (x < 0x3)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -458,12 +707,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws3bTextBox.Text = zeldaAsciiRet;
+            m24TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE7FB, SeekOrigin.Begin);
-            while (x < 0x7)
+            fs1.Seek(0x17D85, SeekOrigin.Begin);
+            while (x < 0x1c)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -478,11 +727,11 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws3cTextBox.Text = zeldaAsciiRet;
+            m25TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE803, SeekOrigin.Begin);
+            fs1.Seek(0x17DA6, SeekOrigin.Begin);
             while (x < 0xa)
             {
                 rctext = fs1.ReadByte().ToString("X");
@@ -498,13 +747,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws3dTextBox.Text = zeldaAsciiRet;
+            m26TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //wizard4
-            fs1.Seek(0xE989, SeekOrigin.Begin);
-            while (x < 0xa)
+            fs1.Seek(0x1976C, SeekOrigin.Begin);
+            while (x < 0x10)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -519,51 +767,11 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws4TextBox.Text = zeldaAsciiRet;
+            m27TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xE994, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws4bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE99E, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws4cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE9A7, SeekOrigin.Begin);
+            fs1.Seek(0x1D0E4, SeekOrigin.Begin);
             while (x < 0x6)
             {
                 rctext = fs1.ReadByte().ToString("X");
@@ -579,13 +787,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws4dTextBox.Text = zeldaAsciiRet;
+            m28TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //wizard5
-            fs1.Seek(0xEC23, SeekOrigin.Begin);
-            while (x < 0xa)
+            fs1.Seek(0x1D0ED, SeekOrigin.Begin);
+            while (x < 0x5)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -600,92 +807,11 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws5TextBox.Text = zeldaAsciiRet;
+            m29TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xEC2E, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws5bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEC38, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws5cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEC43, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws5dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //wizard6
-            fs1.Seek(0xEDAA, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws6TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDB5, SeekOrigin.Begin);
+            fs1.Seek(0x1D0F5, SeekOrigin.Begin);
             while (x < 0x4)
             {
                 rctext = fs1.ReadByte().ToString("X");
@@ -701,11 +827,111 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws6bTextBox.Text = zeldaAsciiRet;
+            m30TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xEDBA, SeekOrigin.Begin);
+            fs1.Seek(0x1FDE8, SeekOrigin.Begin);
+            while (x < 0x8)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m31TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1FDF3, SeekOrigin.Begin);
+            while (x < 0x4)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m32TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1FE1A, SeekOrigin.Begin);
+            while (x < 0x7)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m33TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1FE24, SeekOrigin.Begin);
+            while (x < 0x16)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m34TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1FE3D, SeekOrigin.Begin);
+            while (x < 0xb)
+            {
+                rctext = fs1.ReadByte().ToString("X");
+                if (rctext.Length == 1)
+                {
+                    rctext = "0" + rctext;
+                }
+                temphex = rctext;
+                decodeZText();
+                if (textFlag == 0)
+                {
+                    zeldaAsciiRet += decodeZText();
+                }
+                x++;
+            }
+            m35TextBox.Text = zeldaAsciiRet;
+            zeldaAsciiRet = "";
+            x = 0;
+
+            fs1.Seek(0x1FE49, SeekOrigin.Begin);
             while (x < 0xa)
             {
                 rctext = fs1.ReadByte().ToString("X");
@@ -721,12 +947,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws6cTextBox.Text = zeldaAsciiRet;
+            m36TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            fs1.Seek(0xEDC5, SeekOrigin.Begin);
-            while (x < 0x9)
+            fs1.Seek(0x1FE56, SeekOrigin.Begin);
+            while (x < 0x16)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -741,13 +967,12 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws6dTextBox.Text = zeldaAsciiRet;
+            m37TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
-            //wizard7
-            fs1.Seek(0xEF1F, SeekOrigin.Begin);
-            while (x < 0x8)
+            fs1.Seek(0x1FE6F, SeekOrigin.Begin);
+            while (x < 0x16)
             {
                 rctext = fs1.ReadByte().ToString("X");
                 if (rctext.Length == 1)
@@ -762,138 +987,20 @@ namespace zelda2texteditor
                 }
                 x++;
             }
-            ws7TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF28, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws7bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF32, SeekOrigin.Begin);
-            while (x < 0x5)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws7cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            //wizard8
-            fs1.Seek(0xEF81, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws8TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF8C, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws8bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF95, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws8cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF9E, SeekOrigin.Begin);
-            while (x < 0x6)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            ws8dTextBox.Text = zeldaAsciiRet;
+            m38TextBox.Text = zeldaAsciiRet;
             zeldaAsciiRet = "";
             x = 0;
 
             fs1.Close();
+
         }
+
+
+
 
         private string decodeZText()
         {
             string zeldaAscii = "";
-            textFlag = 0;
 
             switch (temphex)
             {
@@ -902,9 +1009,6 @@ namespace zelda2texteditor
                     break;
                 case "36":
                     zeldaAscii += "!";
-                    break;
-                case "(9C":
-                    zeldaAscii += ",";
                     break;
                 case "CF":
                     zeldaAscii += ".";
@@ -1037,1703 +1141,6 @@ namespace zelda2texteditor
             return zeldaAscii;
         }
 
-        private void updateSpellButton_Click(object sender, EventArgs e)
-        {
-            int x = 0;
-            //write the new text to string
-            string newSp1String, newSp2String, newSp3String, newSp4String, newSp5String,
-                newSp6String, newSp7String, newSp8String;
-            string ZeldaHexReturn="";
-
-            newSp1String = esp1TextBox.Text;
-
-            //pad string length to 11 so no array errors
-            newSp1String = newSp1String.PadRight(11);
-
-            //setup arrays
-            string[] zs = new string[11];
-            byte[] zb = new byte[11];
-            int[] zd = new int[11];
-            string[] zs_final = new string[11];
-            string[] zsw = new string[11];
-
-            while (x < 11)
-            {
-                zs[x] = newSp1String[x].ToString();
-                
-                //convert string back into zelda text hex code
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            //convert the chars to int32, then to string, then byte again
-            int q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-            
-            FileStream fs2 = new FileStream(@filename, FileMode.Open, FileAccess.Write);
-            fs2.Seek(0x1C3A, SeekOrigin.Begin);   // Seek to 0x1C3Ath byte in the file
-            
-            //this is converting to hex before it writes
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp2String = esp2TextBox.Text;
-            newSp2String = newSp2String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp2String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C48, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-
-            ZeldaHexReturn = "";
-            newSp3String = esp3TextBox.Text;
-            newSp3String = newSp3String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp3String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C56, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp4String = esp4TextBox.Text;
-            newSp4String = newSp4String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp4String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C64, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp5String = esp5TextBox.Text;
-            newSp5String = newSp5String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp5String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C72, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp6String = esp6TextBox.Text;
-            newSp6String = newSp6String.PadRight(9);
-            x = 0;
-            while (x < 9)
-            {
-                zs[x] = newSp6String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C80, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp7String = esp7TextBox.Text;
-            newSp7String = newSp7String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp7String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C8E, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-            //next spell
-            ZeldaHexReturn = "";
-            newSp8String = esp8TextBox.Text;
-            newSp8String = newSp8String.PadRight(11);
-            x = 0;
-            while (x < 11)
-            {
-                zs[x] = newSp8String[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-
-            q = 0;
-            while (q < 11)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0x1C9C, SeekOrigin.Begin);
-
-            q = 0;
-            while (q < 11)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-
-
-            //wizard1
-            string newgcString;
-            ZeldaHexReturn = "";
-            newgcString = ws1TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE563, SeekOrigin.Begin);
-            q = 0;
-            while (q < 9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard1b
-            newgcString = ws1bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE56D, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard1c
-            newgcString = ws1cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE578, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard1d
-            newgcString = ws1dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE583, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard2
-            newgcString = ws2TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE68A, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard2b
-            newgcString = ws2bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-
-            x = 0;
-            while (x < 0x7)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-
-            q = 0;
-            while (q < 0x7)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE694, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x7)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard2c
-            newgcString = ws2cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE69C, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard2d
-            newgcString = ws2dTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-
-            x = 0;
-            while (x < 0x5)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-
-            q = 0;
-            while (q < 0x5)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE6A6, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x5)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-
-            //wizard3
-            newgcString = ws3TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE7E9, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard3b
-            newgcString = ws3bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE7F2, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard3c
-            newgcString = ws3cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-
-            x = 0;
-            while (x < 0x7)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-
-            q = 0;
-            while (q < 0x7)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE7FB, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x7)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard3d
-            newgcString = ws3dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE803, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard4
-            newgcString = ws4TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE989, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard4b
-            newgcString = ws4bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE994, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard4c
-            newgcString = ws4cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE99E, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard4d
-            newgcString = ws4dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-
-            x = 0;
-            while (x < 0x6)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-
-            q = 0;
-            while (q < 0x6)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xE9A7, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x6)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard5
-            newgcString = ws5TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEC23, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard5b
-            newgcString = ws5bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEC2E, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard5c
-            newgcString = ws5cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEC38, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard5d
-            newgcString = ws5dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEC43, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard6
-            newgcString = ws6TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEDAA, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard6b
-            newgcString = ws6bTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-
-            x = 0;
-            while (x < 0x4)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-
-            q = 0;
-            while (q < 0x4)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEDB5, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x4)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard6c
-            newgcString = ws6cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEDBA, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard6d
-            newgcString = ws6dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEDC5, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard7
-            newgcString = ws7TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF1F, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard7b
-            newgcString = ws7bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-
-            x = 0;
-            while (x < 0x9)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-
-            q = 0;
-            while (q < 0x9)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF28, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x9)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard7c
-            newgcString = ws7cTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-
-            x = 0;
-            while (x < 0x5)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-
-            q = 0;
-            while (q < 0x5)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF32, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x5)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard8
-            newgcString = ws8TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-
-            x = 0;
-            while (x < 0xa)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-
-            q = 0;
-            while (q < 0xa)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF81, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0xa)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard8b
-            newgcString = ws8bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF8C, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard8c
-            newgcString = ws8cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-
-            x = 0;
-            while (x < 0x8)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-
-            q = 0;
-            while (q < 0x8)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF95, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x8)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            //wizard8d
-            newgcString = ws8dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-
-            x = 0;
-            while (x < 0x6)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-
-            q = 0;
-            while (q < 0x6)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(0xEF9E, SeekOrigin.Begin);
-            q = 0;
-            while (q < 0x6)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-
-            fs2.Close();
-
-
-            MessageBox.Show("Updated!", "Spell Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-
-        }
 
         private string encodeZText()
         {
@@ -2746,9 +1153,6 @@ namespace zelda2texteditor
                     break;
                 case "!":
                     zeldaHexAscii += "36";
-                    break;
-                case ",":
-                    zeldaHexAscii += "9C";
                     break;
                 case ".":
                     zeldaHexAscii += "CF";
@@ -2956,10 +1360,1949 @@ namespace zelda2texteditor
             return zeldaHexAscii;
         }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            //code to update the rom here
+            string newgcString, ZeldaHexReturn="";
+            int x = 0, q=0;
+            //setup arrays
+            string[] zs = new string[0x1C];
+            byte[] zb = new byte[0x1C];
+            int[] zd = new int[0x1C];
+            string[] zs_final = new string[0x1C];
+            string[] zsw = new string[0x1C];
+            FileStream fs2 = new FileStream(@filename, FileMode.Open, FileAccess.Write);
 
-    
+            //1
+            newgcString = m1TextBox.Text;
+            newgcString = newgcString.PadRight(0xa);
+
+            x = 0;
+            while (x < 0xa)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+
+            q = 0;
+            while (q < 0xa)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x0013, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xa)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //2
+            newgcString = m2TextBox.Text;
+            newgcString = newgcString.PadRight(0xf);
+
+            x = 0;
+            while (x < 0xf)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+
+            q = 0;
+            while (q < 0xf)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x0020, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xf)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //3
+            newgcString = m3TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x4)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+
+            q = 0;
+            while (q < 0x4)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1BE5, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x4)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //4
+            newgcString = m4TextBox.Text;
+            newgcString = newgcString.PadRight(0x6);
+
+            x = 0;
+            while (x < 0x6)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+
+            q = 0;
+            while (q < 0x6)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1BF9, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x6)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //5
+            newgcString = m5TextBox.Text;
+            newgcString = newgcString.PadRight(0x5);
+
+            x = 0;
+            while (x < 0x5)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+
+            q = 0;
+            while (q < 0x5)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1C07, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x5)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //6
+            newgcString = m6TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x4)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+
+            q = 0;
+            while (q < 0x4)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1C15, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x4)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //7
+            newgcString = m7TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x4)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+
+            q = 0;
+            while (q < 0x4)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1C1E, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x4)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //8
+            newgcString = m8TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x6)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+
+            q = 0;
+            while (q < 0x6)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1C23, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x6)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //9
+            newgcString = m9TextBox.Text;
+            newgcString = newgcString.PadRight(0xb);
+
+            x = 0;
+            while (x < 0xb)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+
+            q = 0;
+            while (q < 0xb)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C2C, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xb)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //10
+            newgcString = m10TextBox.Text;
+            newgcString = newgcString.PadRight(0x6);
+
+            x = 0;
+            while (x < 0x6)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+
+            q = 0;
+            while (q < 0x6)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C4E, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x6)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //11
+            newgcString = m11TextBox.Text;
+            newgcString = newgcString.PadRight(0x7);
+
+            x = 0;
+            while (x < 0x7)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+
+            q = 0;
+            while (q < 0x7)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C57, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x7)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //12
+            newgcString = m12TextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C62, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //12b
+            newgcString = m12bTextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C66, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //12c
+            newgcString = m12cTextBox.Text;
+            newgcString = newgcString.PadRight(0x2);
+
+            x = 0;
+            while (x < 0x2)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+
+            q = 0;
+            while (q < 0x2)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C6A, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x2)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //13
+            newgcString = m13TextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C70, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //13b
+            newgcString = m13bTextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C74, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //13c
+            newgcString = m13cTextBox.Text;
+            newgcString = newgcString.PadRight(0x2);
+
+            x = 0;
+            while (x < 0x2)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+
+            q = 0;
+            while (q < 0x2)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C78, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x2)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+
+            //14
+            newgcString = m14TextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C7E, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+
+            //14b
+            newgcString = m14bTextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C82, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //14c
+            newgcString = m14cTextBox.Text;
+            newgcString = newgcString.PadRight(0x2);
+
+            x = 0;
+            while (x < 0x2)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+
+            q = 0;
+            while (q < 0x2)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C86, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x2)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //??
+            newgcString = m15TextBox.Text;
+            newgcString = newgcString.PadRight(0x12);
+
+            x = 0;
+            while (x < 0x12)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+
+            q = 0;
+            while (q < 0x12)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17C8B, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x12)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //15
+            newgcString = m16TextBox.Text;
+            newgcString = newgcString.PadRight(0x10);
+
+            x = 0;
+            while (x < 0x10)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+
+            q = 0;
+            while (q < 0x10)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17CB2, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x10)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //22
+            newgcString = m17TextBox.Text;
+            newgcString = newgcString.PadRight(0x13);
+
+            x = 0;
+            while (x < 0x13)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+
+            q = 0;
+            while (q < 0x13)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17CD7, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x13)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //23
+            newgcString = m18TextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17CED, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //24
+            newgcString = m19TextBox.Text;
+            newgcString = newgcString.PadRight(0x15);
+
+            x = 0;
+            while (x < 0x15)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[41].ToString();
+
+            q = 0;
+            while (q < 0x15)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D13, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x15)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //25
+            newgcString = m20TextBox.Text;
+            newgcString = newgcString.PadRight(0x15);
+
+            x = 0;
+            while (x < 0x15)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[38].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[40].ToString() + ZeldaHexReturn[41].ToString();
+
+            q = 0;
+            while (q < 0x15)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D2B, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x15)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //21
+            newgcString = m21TextBox.Text;
+            newgcString = newgcString.PadRight(0xb);
+
+            x = 0;
+            while (x < 0xb)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+
+            q = 0;
+            while (q < 0xb)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D43, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xb)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //26
+            newgcString = m22TextBox.Text;
+            newgcString = newgcString.PadRight(0x13);
+
+            x = 0;
+            while (x < 0x13)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+
+            q = 0;
+            while (q < 0x13)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D51, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x13)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //27
+            newgcString = m23TextBox.Text;
+            newgcString = newgcString.PadRight(0x11);
+
+            x = 0;
+            while (x < 0x11)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+
+            q = 0;
+            while (q < 0x11)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D6D, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x11)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //28
+            newgcString = m24TextBox.Text;
+            newgcString = newgcString.PadRight(0x3);
+
+            x = 0;
+            while (x < 0x3)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+
+            q = 0;
+            while (q < 0x3)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D81, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x3)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //29
+            newgcString = m25TextBox.Text;
+            newgcString = newgcString.PadRight(0x1c);
+
+            x = 0;
+            while (x < 0x1c)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[38].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[40].ToString() + ZeldaHexReturn[41].ToString();
+            zsw[21] = ZeldaHexReturn[42].ToString() + ZeldaHexReturn[43].ToString();
+            zsw[22] = ZeldaHexReturn[44].ToString() + ZeldaHexReturn[45].ToString();
+            zsw[23] = ZeldaHexReturn[46].ToString() + ZeldaHexReturn[47].ToString();
+            zsw[24] = ZeldaHexReturn[48].ToString() + ZeldaHexReturn[49].ToString();
+            zsw[25] = ZeldaHexReturn[50].ToString() + ZeldaHexReturn[51].ToString();
+            zsw[26] = ZeldaHexReturn[52].ToString() + ZeldaHexReturn[53].ToString();
+            zsw[27] = ZeldaHexReturn[54].ToString() + ZeldaHexReturn[55].ToString();
+
+            q = 0;
+            while (q < 0x1c)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17D85, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x1c)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //30
+            newgcString = m26TextBox.Text;
+            newgcString = newgcString.PadRight(0xa);
+
+            x = 0;
+            while (x < 0xa)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+
+            q = 0;
+            while (q < 0xa)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x17DA6, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xa)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //31
+            newgcString = m27TextBox.Text;
+            newgcString = newgcString.PadRight(0x10);
+
+            x = 0;
+            while (x < 0x10)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+
+            q = 0;
+            while (q < 0x10)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1976C, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x10)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //32
+            newgcString = m28TextBox.Text;
+            newgcString = newgcString.PadRight(0x6);
+
+            x = 0;
+            while (x < 0x6)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+
+            q = 0;
+            while (q < 0x6)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1D0E4, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x6)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //33
+            newgcString = m29TextBox.Text;
+            newgcString = newgcString.PadRight(0x5);
+
+            x = 0;
+            while (x < 0x5)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+
+            q = 0;
+            while (q < 0x5)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1D0ED, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x5)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //34
+            newgcString = m30TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x4)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+
+            q = 0;
+            while (q < 0x4)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1D0F5, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x4)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //35
+            newgcString = m31TextBox.Text;
+            newgcString = newgcString.PadRight(0x8);
+
+            x = 0;
+            while (x < 0x8)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+
+            q = 0;
+            while (q < 0x8)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FDE8, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x8)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //36
+            newgcString = m32TextBox.Text;
+            newgcString = newgcString.PadRight(0x4);
+
+            x = 0;
+            while (x < 0x4)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+
+            q = 0;
+            while (q < 0x4)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FDF3, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x4)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //37
+            newgcString = m33TextBox.Text;
+            newgcString = newgcString.PadRight(0x7);
+
+            x = 0;
+            while (x < 0x7)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+
+            q = 0;
+            while (q < 0x7)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE1A, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x7)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //38
+            newgcString = m34TextBox.Text;
+            newgcString = newgcString.PadRight(0x1c);
+
+            x = 0;
+            while (x < 0x16)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[38].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[40].ToString() + ZeldaHexReturn[41].ToString();
+            zsw[21] = ZeldaHexReturn[42].ToString() + ZeldaHexReturn[43].ToString();
+
+            q = 0;
+            while (q < 0x16)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE24, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x16)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //35
+            newgcString = m35TextBox.Text;
+            newgcString = newgcString.PadRight(0xb);
+
+            x = 0;
+            while (x < 0xb)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+
+            q = 0;
+            while (q < 0xb)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE3D, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xb)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //40
+            newgcString = m36TextBox.Text;
+            newgcString = newgcString.PadRight(0xa);
+
+            x = 0;
+            while (x < 0xa)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+
+            q = 0;
+            while (q < 0xa)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE49, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0xa)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //41
+            newgcString = m37TextBox.Text;
+            newgcString = newgcString.PadRight(0x1c);
+
+            x = 0;
+            while (x < 0x16)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[38].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[40].ToString() + ZeldaHexReturn[41].ToString();
+            zsw[21] = ZeldaHexReturn[42].ToString() + ZeldaHexReturn[43].ToString();
+
+            q = 0;
+            while (q < 0x16)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE56, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x16)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+            //42
+            newgcString = m38TextBox.Text;
+            newgcString = newgcString.PadRight(0x1c);
+
+            x = 0;
+            while (x < 0x16)
+            {
+                zs[x] = newgcString[x].ToString();
+                tempascii = zs[x];
+                encodeZText();
+                ZeldaHexReturn += encodeZText();
+                x++;
+            }
+
+            zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
+            zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
+            zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
+            zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
+            zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
+            zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
+            zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
+            zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
+            zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
+            zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
+            zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
+            zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
+            zsw[12] = ZeldaHexReturn[24].ToString() + ZeldaHexReturn[25].ToString();
+            zsw[13] = ZeldaHexReturn[26].ToString() + ZeldaHexReturn[27].ToString();
+            zsw[14] = ZeldaHexReturn[28].ToString() + ZeldaHexReturn[29].ToString();
+            zsw[15] = ZeldaHexReturn[30].ToString() + ZeldaHexReturn[31].ToString();
+            zsw[16] = ZeldaHexReturn[32].ToString() + ZeldaHexReturn[33].ToString();
+            zsw[17] = ZeldaHexReturn[34].ToString() + ZeldaHexReturn[35].ToString();
+            zsw[18] = ZeldaHexReturn[36].ToString() + ZeldaHexReturn[37].ToString();
+            zsw[19] = ZeldaHexReturn[38].ToString() + ZeldaHexReturn[39].ToString();
+            zsw[20] = ZeldaHexReturn[40].ToString() + ZeldaHexReturn[41].ToString();
+            zsw[21] = ZeldaHexReturn[42].ToString() + ZeldaHexReturn[43].ToString();
+
+            q = 0;
+            while (q < 0x16)
+            {
+                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
+                zs_final[q] = zd[q].ToString();
+                zb[q] = byte.Parse(zs_final[q]);
+                q++;
+            }
+
+            fs2.Seek(0x1FE6F, SeekOrigin.Begin);
+            q = 0;
+            while (q < 0x16)
+            {
+                fs2.WriteByte(zb[q]);
+                q++;
+            }
+            newgcString = "";
+            ZeldaHexReturn = "";
+
+
+            fs2.Close();
+
+            //MessageBox.Show("Not implemented yet!", "Not implemented yet.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //this.Close();
+            MessageBox.Show("Updated!", "Random and Miscellaneous Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
     }
-
-
-
 }

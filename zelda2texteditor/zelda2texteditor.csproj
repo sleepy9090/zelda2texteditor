@@ -61,64 +61,64 @@
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
     <Compile Include="Backend.cs" />
-    <Compile Include="Form-gct.cs">
+    <Compile Include="FormCredits.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-gct.Designer.cs">
-      <DependentUpon>Form-gct.cs</DependentUpon>
+    <Compile Include="FormCredits.Designer.cs">
+      <DependentUpon>FormCredits.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form-ramt.cs">
+    <Compile Include="FormRegistrationAndMisc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-ramt.Designer.cs">
-      <DependentUpon>Form-ramt.cs</DependentUpon>
+    <Compile Include="FormRegistrationAndMisc.Designer.cs">
+      <DependentUpon>FormRegistrationAndMisc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form-st.cs">
+    <Compile Include="FormSpells.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-st.Designer.cs">
-      <DependentUpon>Form-st.cs</DependentUpon>
+    <Compile Include="FormSpells.Designer.cs">
+      <DependentUpon>FormSpells.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form-tn.cs">
+    <Compile Include="FormLocations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-tn.Designer.cs">
-      <DependentUpon>Form-tn.cs</DependentUpon>
+    <Compile Include="FormLocations.Designer.cs">
+      <DependentUpon>FormLocations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormZelda2NesRomEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormZelda2NesRomEditor.Designer.cs">
+      <DependentUpon>FormZelda2NesRomEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form-igt.cs">
+    <Compile Include="FormGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form-igt.Designer.cs">
-      <DependentUpon>Form-igt.cs</DependentUpon>
+    <Compile Include="FormGeneral.Designer.cs">
+      <DependentUpon>FormGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-gct.resx">
-      <DependentUpon>Form-gct.cs</DependentUpon>
+    <EmbeddedResource Include="FormCredits.resx">
+      <DependentUpon>FormCredits.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-igt.resx">
-      <DependentUpon>Form-igt.cs</DependentUpon>
+    <EmbeddedResource Include="FormGeneral.resx">
+      <DependentUpon>FormGeneral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-ramt.resx">
-      <DependentUpon>Form-ramt.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrationAndMisc.resx">
+      <DependentUpon>FormRegistrationAndMisc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-st.resx">
-      <DependentUpon>Form-st.cs</DependentUpon>
+    <EmbeddedResource Include="FormSpells.resx">
+      <DependentUpon>FormSpells.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form-tn.resx">
-      <DependentUpon>Form-tn.cs</DependentUpon>
+    <EmbeddedResource Include="FormLocations.resx">
+      <DependentUpon>FormLocations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormZelda2NesRomEditor.resx">
+      <DependentUpon>FormZelda2NesRomEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form1
+    partial class FormZelda2NesRomEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormZelda2NesRomEditor));
             this.btfButton = new System.Windows.Forms.Button();
-            this.fnTextBox = new System.Windows.Forms.TextBox();
-            this.fnLabel = new System.Windows.Forms.Label();
+            this.textBoxFullFilename = new System.Windows.Forms.TextBox();
+            this.labelFilename = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editInGameTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGeneralGameTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGameCreditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editRegisistrationAndMiscellanouseTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editTownNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editlocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sfnTextBox = new System.Windows.Forms.TextBox();
-            this.openRomProgressBar = new System.Windows.Forms.ProgressBar();
+            this.textBoxFilename = new System.Windows.Forms.TextBox();
             this.zstoryTextBox = new System.Windows.Forms.TextBox();
             this.zstoryLabel = new System.Windows.Forms.Label();
             this.zstoryeditTextBox = new System.Windows.Forms.TextBox();
             this.zstoryeditLabel = new System.Windows.Forms.Label();
-            this.rzrtLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.zstoryeditTextBox16 = new System.Windows.Forms.TextBox();
-            this.zstoryeditTextBox12 = new System.Windows.Forms.TextBox();
+            this.zstoryeditTextBox15 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox11 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox10 = new System.Windows.Forms.TextBox();
+            this.zstoryeditTextBox9 = new System.Windows.Forms.TextBox();
+            this.zstoryeditTextBox12 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox13 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox14 = new System.Windows.Forms.TextBox();
-            this.zstoryeditTextBox15 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox8 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox7 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox6 = new System.Windows.Forms.TextBox();
@@ -84,22 +82,22 @@
             this.btfButton.UseVisualStyleBackColor = true;
             this.btfButton.Click += new System.EventHandler(this.btfButton_Click);
             // 
-            // fnTextBox
+            // textBoxFullFilename
             // 
-            this.fnTextBox.Location = new System.Drawing.Point(69, 13);
-            this.fnTextBox.Name = "fnTextBox";
-            this.fnTextBox.ReadOnly = true;
-            this.fnTextBox.Size = new System.Drawing.Size(365, 20);
-            this.fnTextBox.TabIndex = 0;
+            this.textBoxFullFilename.Location = new System.Drawing.Point(69, 13);
+            this.textBoxFullFilename.Name = "textBoxFullFilename";
+            this.textBoxFullFilename.ReadOnly = true;
+            this.textBoxFullFilename.Size = new System.Drawing.Size(365, 20);
+            this.textBoxFullFilename.TabIndex = 0;
             // 
-            // fnLabel
+            // labelFilename
             // 
-            this.fnLabel.AutoSize = true;
-            this.fnLabel.Location = new System.Drawing.Point(11, 16);
-            this.fnLabel.Name = "fnLabel";
-            this.fnLabel.Size = new System.Drawing.Size(52, 13);
-            this.fnLabel.TabIndex = 4;
-            this.fnLabel.Text = "Filename:";
+            this.labelFilename.AutoSize = true;
+            this.labelFilename.Location = new System.Drawing.Point(11, 16);
+            this.labelFilename.Name = "labelFilename";
+            this.labelFilename.Size = new System.Drawing.Size(52, 13);
+            this.labelFilename.TabIndex = 4;
+            this.labelFilename.Text = "Filename:";
             // 
             // menuStrip1
             // 
@@ -128,7 +126,7 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "&Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -145,49 +143,49 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editInGameTextToolStripMenuItem,
+            this.editGeneralGameTextToolStripMenuItem,
             this.editGameCreditsToolStripMenuItem,
             this.editSpellsToolStripMenuItem,
             this.editRegisistrationAndMiscellanouseTextToolStripMenuItem,
-            this.editTownNamesToolStripMenuItem});
+            this.editlocationsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // editInGameTextToolStripMenuItem
+            // editGeneralGameTextToolStripMenuItem
             // 
-            this.editInGameTextToolStripMenuItem.Name = "editInGameTextToolStripMenuItem";
-            this.editInGameTextToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
-            this.editInGameTextToolStripMenuItem.Text = "Edit In &Game Text";
-            this.editInGameTextToolStripMenuItem.Click += new System.EventHandler(this.editInGameTextToolStripMenuItem_Click);
+            this.editGeneralGameTextToolStripMenuItem.Name = "editGeneralGameTextToolStripMenuItem";
+            this.editGeneralGameTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.editGeneralGameTextToolStripMenuItem.Text = "&General Game Text";
+            this.editGeneralGameTextToolStripMenuItem.Click += new System.EventHandler(this.EditInGameTextToolStripMenuItem_Click);
             // 
             // editGameCreditsToolStripMenuItem
             // 
             this.editGameCreditsToolStripMenuItem.Name = "editGameCreditsToolStripMenuItem";
-            this.editGameCreditsToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
-            this.editGameCreditsToolStripMenuItem.Text = "Edit Game &Credits Text";
-            this.editGameCreditsToolStripMenuItem.Click += new System.EventHandler(this.editGameCreditsToolStripMenuItem_Click);
+            this.editGameCreditsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.editGameCreditsToolStripMenuItem.Text = "&Credits Text";
+            this.editGameCreditsToolStripMenuItem.Click += new System.EventHandler(this.EditGameCreditsToolStripMenuItem_Click);
             // 
             // editSpellsToolStripMenuItem
             // 
             this.editSpellsToolStripMenuItem.Name = "editSpellsToolStripMenuItem";
-            this.editSpellsToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
-            this.editSpellsToolStripMenuItem.Text = "Edit &Spells Text";
-            this.editSpellsToolStripMenuItem.Click += new System.EventHandler(this.editSpellsToolStripMenuItem_Click);
+            this.editSpellsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.editSpellsToolStripMenuItem.Text = "&Spells Text";
+            this.editSpellsToolStripMenuItem.Click += new System.EventHandler(this.EditSpellsToolStripMenuItem_Click);
             // 
             // editRegisistrationAndMiscellanouseTextToolStripMenuItem
             // 
             this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Name = "editRegisistrationAndMiscellanouseTextToolStripMenuItem";
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Text = "Edit &Regisistration and Miscellaneous Text";
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Click += new System.EventHandler(this.editRegisistrationAndMiscellanouseTextToolStripMenuItem_Click);
+            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Text = "&Regisistration and Miscellaneous Text";
+            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Click += new System.EventHandler(this.EditRegistrationAndMiscTextToolStripMenuItem_Click);
             // 
-            // editTownNamesToolStripMenuItem
+            // editlocationsToolStripMenuItem
             // 
-            this.editTownNamesToolStripMenuItem.Name = "editTownNamesToolStripMenuItem";
-            this.editTownNamesToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
-            this.editTownNamesToolStripMenuItem.Text = "Edit &Locations";
-            this.editTownNamesToolStripMenuItem.Click += new System.EventHandler(this.editTownNamesToolStripMenuItem_Click);
+            this.editlocationsToolStripMenuItem.Name = "editlocationsToolStripMenuItem";
+            this.editlocationsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.editlocationsToolStripMenuItem.Text = "&Locations Text";
+            this.editlocationsToolStripMenuItem.Click += new System.EventHandler(this.EditTownNamesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -200,25 +198,17 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // sfnTextBox
+            // textBoxFilename
             // 
-            this.sfnTextBox.Location = new System.Drawing.Point(474, 13);
-            this.sfnTextBox.Name = "sfnTextBox";
-            this.sfnTextBox.ReadOnly = true;
-            this.sfnTextBox.Size = new System.Drawing.Size(240, 20);
-            this.sfnTextBox.TabIndex = 3;
-            // 
-            // openRomProgressBar
-            // 
-            this.openRomProgressBar.Location = new System.Drawing.Point(23, 464);
-            this.openRomProgressBar.Name = "openRomProgressBar";
-            this.openRomProgressBar.Size = new System.Drawing.Size(724, 23);
-            this.openRomProgressBar.Step = 50;
-            this.openRomProgressBar.TabIndex = 8;
+            this.textBoxFilename.Location = new System.Drawing.Point(474, 13);
+            this.textBoxFilename.Name = "textBoxFilename";
+            this.textBoxFilename.ReadOnly = true;
+            this.textBoxFilename.Size = new System.Drawing.Size(240, 20);
+            this.textBoxFilename.TabIndex = 3;
             // 
             // zstoryTextBox
             // 
@@ -255,24 +245,15 @@
             this.zstoryeditLabel.TabIndex = 12;
             this.zstoryeditLabel.Text = "Edit Story:";
             // 
-            // rzrtLabel
-            // 
-            this.rzrtLabel.AutoSize = true;
-            this.rzrtLabel.Location = new System.Drawing.Point(20, 448);
-            this.rzrtLabel.Name = "rzrtLabel";
-            this.rzrtLabel.Size = new System.Drawing.Size(138, 13);
-            this.rzrtLabel.TabIndex = 13;
-            this.rzrtLabel.Text = "Reading Zelda 2 Rom Text:";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.zstoryeditTextBox16);
-            this.groupBox1.Controls.Add(this.zstoryeditTextBox12);
+            this.groupBox1.Controls.Add(this.zstoryeditTextBox15);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox11);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox10);
+            this.groupBox1.Controls.Add(this.zstoryeditTextBox9);
+            this.groupBox1.Controls.Add(this.zstoryeditTextBox12);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox13);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox14);
-            this.groupBox1.Controls.Add(this.zstoryeditTextBox15);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox8);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox7);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox6);
@@ -291,61 +272,61 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // zstoryeditTextBox16
+            // zstoryeditTextBox15
             // 
-            this.zstoryeditTextBox16.Enabled = false;
-            this.zstoryeditTextBox16.Location = new System.Drawing.Point(364, 280);
-            this.zstoryeditTextBox16.Name = "zstoryeditTextBox16";
-            this.zstoryeditTextBox16.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox16.TabIndex = 14;
-            // 
-            // zstoryeditTextBox12
-            // 
-            this.zstoryeditTextBox12.Enabled = false;
-            this.zstoryeditTextBox12.Location = new System.Drawing.Point(365, 176);
-            this.zstoryeditTextBox12.Name = "zstoryeditTextBox12";
-            this.zstoryeditTextBox12.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox12.TabIndex = 10;
+            this.zstoryeditTextBox15.Enabled = false;
+            this.zstoryeditTextBox15.Location = new System.Drawing.Point(364, 280);
+            this.zstoryeditTextBox15.Name = "zstoryeditTextBox15";
+            this.zstoryeditTextBox15.Size = new System.Drawing.Size(350, 20);
+            this.zstoryeditTextBox15.TabIndex = 14;
             // 
             // zstoryeditTextBox11
             // 
             this.zstoryeditTextBox11.Enabled = false;
-            this.zstoryeditTextBox11.Location = new System.Drawing.Point(365, 150);
+            this.zstoryeditTextBox11.Location = new System.Drawing.Point(365, 176);
             this.zstoryeditTextBox11.Name = "zstoryeditTextBox11";
             this.zstoryeditTextBox11.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox11.TabIndex = 9;
+            this.zstoryeditTextBox11.TabIndex = 10;
             // 
             // zstoryeditTextBox10
             // 
             this.zstoryeditTextBox10.Enabled = false;
-            this.zstoryeditTextBox10.Location = new System.Drawing.Point(364, 124);
+            this.zstoryeditTextBox10.Location = new System.Drawing.Point(365, 150);
             this.zstoryeditTextBox10.Name = "zstoryeditTextBox10";
             this.zstoryeditTextBox10.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox10.TabIndex = 8;
+            this.zstoryeditTextBox10.TabIndex = 9;
+            // 
+            // zstoryeditTextBox9
+            // 
+            this.zstoryeditTextBox9.Enabled = false;
+            this.zstoryeditTextBox9.Location = new System.Drawing.Point(364, 124);
+            this.zstoryeditTextBox9.Name = "zstoryeditTextBox9";
+            this.zstoryeditTextBox9.Size = new System.Drawing.Size(350, 20);
+            this.zstoryeditTextBox9.TabIndex = 8;
+            // 
+            // zstoryeditTextBox12
+            // 
+            this.zstoryeditTextBox12.Enabled = false;
+            this.zstoryeditTextBox12.Location = new System.Drawing.Point(365, 202);
+            this.zstoryeditTextBox12.Name = "zstoryeditTextBox12";
+            this.zstoryeditTextBox12.Size = new System.Drawing.Size(350, 20);
+            this.zstoryeditTextBox12.TabIndex = 11;
             // 
             // zstoryeditTextBox13
             // 
             this.zstoryeditTextBox13.Enabled = false;
-            this.zstoryeditTextBox13.Location = new System.Drawing.Point(365, 202);
+            this.zstoryeditTextBox13.Location = new System.Drawing.Point(364, 228);
             this.zstoryeditTextBox13.Name = "zstoryeditTextBox13";
             this.zstoryeditTextBox13.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox13.TabIndex = 11;
+            this.zstoryeditTextBox13.TabIndex = 12;
             // 
             // zstoryeditTextBox14
             // 
             this.zstoryeditTextBox14.Enabled = false;
-            this.zstoryeditTextBox14.Location = new System.Drawing.Point(364, 228);
+            this.zstoryeditTextBox14.Location = new System.Drawing.Point(365, 254);
             this.zstoryeditTextBox14.Name = "zstoryeditTextBox14";
             this.zstoryeditTextBox14.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox14.TabIndex = 12;
-            // 
-            // zstoryeditTextBox15
-            // 
-            this.zstoryeditTextBox15.Enabled = false;
-            this.zstoryeditTextBox15.Location = new System.Drawing.Point(365, 254);
-            this.zstoryeditTextBox15.Name = "zstoryeditTextBox15";
-            this.zstoryeditTextBox15.Size = new System.Drawing.Size(350, 20);
-            this.zstoryeditTextBox15.TabIndex = 13;
+            this.zstoryeditTextBox14.TabIndex = 13;
             // 
             // zstoryeditTextBox8
             // 
@@ -411,37 +392,35 @@
             this.updateButton.TabIndex = 15;
             this.updateButton.Text = "&Update";
             this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.fnLabel);
+            this.groupBox2.Controls.Add(this.labelFilename);
             this.groupBox2.Controls.Add(this.btfButton);
-            this.groupBox2.Controls.Add(this.fnTextBox);
-            this.groupBox2.Controls.Add(this.sfnTextBox);
+            this.groupBox2.Controls.Add(this.textBoxFullFilename);
+            this.groupBox2.Controls.Add(this.textBoxFilename);
             this.groupBox2.Location = new System.Drawing.Point(15, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(724, 47);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
-            // Form1
+            // FormZelda2NesRomEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 495);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rzrtLabel);
-            this.Controls.Add(this.openRomProgressBar);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormZelda2NesRomEditor";
             this.Text = "Zelda II NES ROM Text Editor";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormZelda2nesRomEditor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -456,8 +435,8 @@
         #endregion
 
         private System.Windows.Forms.Button btfButton;
-        private System.Windows.Forms.TextBox fnTextBox;
-        private System.Windows.Forms.Label fnLabel;
+        private System.Windows.Forms.TextBox textBoxFullFilename;
+        private System.Windows.Forms.Label labelFilename;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -465,36 +444,34 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.TextBox sfnTextBox;
-        private System.Windows.Forms.ProgressBar openRomProgressBar;
+        private System.Windows.Forms.TextBox textBoxFilename;
         private System.Windows.Forms.TextBox zstoryTextBox;
         private System.Windows.Forms.Label zstoryLabel;
         private System.Windows.Forms.TextBox zstoryeditTextBox;
         private System.Windows.Forms.Label zstoryeditLabel;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editInGameTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editGeneralGameTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGameCreditsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editSpellsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editRegisistrationAndMiscellanouseTextToolStripMenuItem;
-        private System.Windows.Forms.Label rzrtLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox zstoryeditTextBox3;
         private System.Windows.Forms.TextBox zstoryeditTextBox2;
+        private System.Windows.Forms.TextBox zstoryeditTextBox13;
         private System.Windows.Forms.TextBox zstoryeditTextBox14;
-        private System.Windows.Forms.TextBox zstoryeditTextBox15;
         private System.Windows.Forms.TextBox zstoryeditTextBox8;
         private System.Windows.Forms.TextBox zstoryeditTextBox7;
         private System.Windows.Forms.TextBox zstoryeditTextBox6;
         private System.Windows.Forms.TextBox zstoryeditTextBox5;
         private System.Windows.Forms.TextBox zstoryeditTextBox4;
-        private System.Windows.Forms.TextBox zstoryeditTextBox13;
         private System.Windows.Forms.TextBox zstoryeditTextBox12;
         private System.Windows.Forms.TextBox zstoryeditTextBox11;
         private System.Windows.Forms.TextBox zstoryeditTextBox10;
-        private System.Windows.Forms.TextBox zstoryeditTextBox16;
-        private System.Windows.Forms.ToolStripMenuItem editTownNamesToolStripMenuItem;
+        private System.Windows.Forms.TextBox zstoryeditTextBox9;
+        private System.Windows.Forms.TextBox zstoryeditTextBox15;
+        private System.Windows.Forms.ToolStripMenuItem editlocationsToolStripMenuItem;
     }
 }
 

@@ -1,18 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿/**
+ * @file           FormGeneral.cs
+ * @brief          Creates the form for changing general text.
+ *
+ * @copyright      Shawn M. Crawford
+ * @date           10/10/2019
+ *
+ * @remark Author  Shawn M. Crawford
+ *
+ * @note           N/A
+ * 
+ */
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace zelda2texteditor
 {
-    public partial class Form2_igt : Form
+    public partial class FormGeneral : Form
     {
-        public Form2_igt()
+
+        public string FullFilename { get; set; }
+
+        public FormGeneral()
         {
             InitializeComponent();
         }
@@ -34,22 +43,7 @@ namespace zelda2texteditor
         string newgcString;
         int x = 0, q = 0, offset = 0x0;
 
-        public string fntootherform
-        {
-            
-            get
-            {
-                return filename;
-            }
-            set
-            {
-                filename = value;
-            }
-        }
-
-        
-
-        private void Form2_igt_Load(object sender, EventArgs e)
+        private void FormGeneral_Load(object sender, EventArgs e)
         {
             //there is no 28
             igt1TextBox.MaxLength = 0xa;

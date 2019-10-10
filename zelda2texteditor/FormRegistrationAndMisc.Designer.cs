@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form_ramt
+    partial class FormRegistrationAndMisc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ramt));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistrationAndMisc));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.updateButton = new System.Windows.Forms.Button();
@@ -462,7 +462,7 @@
             this.m1TextBox.Size = new System.Drawing.Size(100, 20);
             this.m1TextBox.TabIndex = 12;
             // 
-            // Form_ramt
+            // FormRegistrationAndMisc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -471,9 +471,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form_ramt";
+            this.Name = "FormRegistrationAndMisc";
             this.Text = "Registration and Miscellanous Text";
-            this.Load += new System.EventHandler(this.Form_ramt_Load);
+            this.Load += new System.EventHandler(this.FormRegistrationAndMisc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form_tn
+    partial class FormLocations
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_tn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLocations));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.loc8cTextBox = new System.Windows.Forms.TextBox();
+            this.loc7cTextBox = new System.Windows.Forms.TextBox();
+            this.loc5cTextBox = new System.Windows.Forms.TextBox();
+            this.loc3cTextBox = new System.Windows.Forms.TextBox();
             this.loc8bTextBox = new System.Windows.Forms.TextBox();
             this.loc8aTextBox = new System.Windows.Forms.TextBox();
             this.loc7bTextBox = new System.Windows.Forms.TextBox();
@@ -45,7 +49,7 @@
             this.loc2aTextBox = new System.Windows.Forms.TextBox();
             this.loc1bTextBox = new System.Windows.Forms.TextBox();
             this.loc1aTextBox = new System.Windows.Forms.TextBox();
-            this.update = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.loc8TextBox = new System.Windows.Forms.TextBox();
             this.loc7TextBox = new System.Windows.Forms.TextBox();
             this.loc6TextBox = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@
             this.loc3TextBox = new System.Windows.Forms.TextBox();
             this.loc2TextBox = new System.Windows.Forms.TextBox();
             this.loc1TextBox = new System.Windows.Forms.TextBox();
-            this.loc3cTextBox = new System.Windows.Forms.TextBox();
-            this.loc5cTextBox = new System.Windows.Forms.TextBox();
-            this.loc7cTextBox = new System.Windows.Forms.TextBox();
-            this.loc8cTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.loc2aTextBox);
             this.groupBox1.Controls.Add(this.loc1bTextBox);
             this.groupBox1.Controls.Add(this.loc1aTextBox);
-            this.groupBox1.Controls.Add(this.update);
+            this.groupBox1.Controls.Add(this.buttonUpdate);
             this.groupBox1.Controls.Add(this.loc8TextBox);
             this.groupBox1.Controls.Add(this.loc7TextBox);
             this.groupBox1.Controls.Add(this.loc6TextBox);
@@ -96,6 +96,34 @@
             this.groupBox1.Size = new System.Drawing.Size(431, 259);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // loc8cTextBox
+            // 
+            this.loc8cTextBox.Location = new System.Drawing.Point(322, 201);
+            this.loc8cTextBox.Name = "loc8cTextBox";
+            this.loc8cTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loc8cTextBox.TabIndex = 30;
+            // 
+            // loc7cTextBox
+            // 
+            this.loc7cTextBox.Location = new System.Drawing.Point(322, 175);
+            this.loc7cTextBox.Name = "loc7cTextBox";
+            this.loc7cTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loc7cTextBox.TabIndex = 29;
+            // 
+            // loc5cTextBox
+            // 
+            this.loc5cTextBox.Location = new System.Drawing.Point(322, 123);
+            this.loc5cTextBox.Name = "loc5cTextBox";
+            this.loc5cTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loc5cTextBox.TabIndex = 28;
+            // 
+            // loc3cTextBox
+            // 
+            this.loc3cTextBox.Location = new System.Drawing.Point(322, 71);
+            this.loc3cTextBox.Name = "loc3cTextBox";
+            this.loc3cTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loc3cTextBox.TabIndex = 27;
             // 
             // loc8bTextBox
             // 
@@ -202,15 +230,15 @@
             this.loc1aTextBox.Size = new System.Drawing.Size(100, 20);
             this.loc1aTextBox.TabIndex = 10;
             // 
-            // update
+            // buttonUpdate
             // 
-            this.update.Location = new System.Drawing.Point(347, 227);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 9;
-            this.update.Text = "&Update";
-            this.update.UseVisualStyleBackColor = true;
-            this.update.Click += new System.EventHandler(this.button1_Click);
+            this.buttonUpdate.Location = new System.Drawing.Point(347, 227);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.TabIndex = 9;
+            this.buttonUpdate.Text = "&Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
             // 
             // loc8TextBox
             // 
@@ -268,35 +296,7 @@
             this.loc1TextBox.Size = new System.Drawing.Size(98, 20);
             this.loc1TextBox.TabIndex = 0;
             // 
-            // loc3cTextBox
-            // 
-            this.loc3cTextBox.Location = new System.Drawing.Point(322, 71);
-            this.loc3cTextBox.Name = "loc3cTextBox";
-            this.loc3cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.loc3cTextBox.TabIndex = 27;
-            // 
-            // loc5cTextBox
-            // 
-            this.loc5cTextBox.Location = new System.Drawing.Point(322, 123);
-            this.loc5cTextBox.Name = "loc5cTextBox";
-            this.loc5cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.loc5cTextBox.TabIndex = 28;
-            // 
-            // loc7cTextBox
-            // 
-            this.loc7cTextBox.Location = new System.Drawing.Point(322, 175);
-            this.loc7cTextBox.Name = "loc7cTextBox";
-            this.loc7cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.loc7cTextBox.TabIndex = 29;
-            // 
-            // loc8cTextBox
-            // 
-            this.loc8cTextBox.Location = new System.Drawing.Point(322, 201);
-            this.loc8cTextBox.Name = "loc8cTextBox";
-            this.loc8cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.loc8cTextBox.TabIndex = 30;
-            // 
-            // Form_tn
+            // FormLocations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,10 +305,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form_tn";
+            this.Name = "FormLocations";
             this.ShowIcon = false;
             this.Text = "Edit Locations";
-            this.Load += new System.EventHandler(this.Form_tn_Load);
+            this.Load += new System.EventHandler(this.FormLocations_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -326,7 +326,7 @@
         private System.Windows.Forms.TextBox loc5TextBox;
         private System.Windows.Forms.TextBox loc4TextBox;
         private System.Windows.Forms.TextBox loc3TextBox;
-        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox loc7aTextBox;
         private System.Windows.Forms.TextBox loc6bTextBox;
         private System.Windows.Forms.TextBox loc6aTextBox;

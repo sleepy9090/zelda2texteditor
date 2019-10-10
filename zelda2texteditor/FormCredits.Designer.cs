@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form_gct
+    partial class FormCredits
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_gct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCredits));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.gctextBox28 = new System.Windows.Forms.TextBox();
@@ -305,7 +305,7 @@
             this.gctextBox1.Size = new System.Drawing.Size(145, 20);
             this.gctextBox1.TabIndex = 0;
             // 
-            // Form_gct
+            // FormCredits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,9 +314,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form_gct";
+            this.Name = "FormCredits";
             this.Text = "Ending & Game Credits";
-            this.Load += new System.EventHandler(this.Form_gct_Load);
+            this.Load += new System.EventHandler(this.FormCredits_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

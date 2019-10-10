@@ -1,6 +1,6 @@
 ﻿namespace zelda2texteditor
 {
-    partial class Form_st
+    partial class FormSpells
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_st));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSpells));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -438,7 +438,7 @@
             this.ws2TextBox.Size = new System.Drawing.Size(96, 20);
             this.ws2TextBox.TabIndex = 4;
             // 
-            // Form_st
+            // FormSpells
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -450,9 +450,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form_st";
+            this.Name = "FormSpells";
             this.Text = "Edit Spell Text";
-            this.Load += new System.EventHandler(this.Form_st_Load);
+            this.Load += new System.EventHandler(this.FormSpells_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
