@@ -120,48 +120,40 @@ namespace zelda2texteditor
             zstoryeditTextBox15.Text = backend.getText(0x1c, 0x16AD8);
         }
 
-        private void FormZelda2nesRomEditor_Load(object sender, EventArgs e)
+        private void FormZelda2NesRomEditor_Load(object sender, EventArgs e)
         {
             // Do nothing
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void EditInGameTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormGeneral formGeneral = new FormGeneral();
-
-            formGeneral.FullFilename = FullFilename;
+            FormGeneral formGeneral = new FormGeneral(FullFilename);
 
             formGeneral.ShowDialog();
         }
 
         private void EditGameCreditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCredits formCredits = new FormCredits();
-
-            formCredits.FullFilename = FullFilename;
+            FormCredits formCredits = new FormCredits(FullFilename);
 
             formCredits.ShowDialog();
         }
 
         private void EditSpellsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSpells formSpells = new FormSpells();
-
-            formSpells.FullFilename = FullFilename;
+            FormSpells formSpells = new FormSpells(FullFilename);
 
             formSpells.ShowDialog();
         }
 
         private void EditRegistrationAndMiscTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRegistrationAndMisc formRegistrationAndMisc = new FormRegistrationAndMisc();
-
-            formRegistrationAndMisc.FullFilename = FullFilename;
+            FormRegistrationAndMisc formRegistrationAndMisc = new FormRegistrationAndMisc(FullFilename);
 
             formRegistrationAndMisc.ShowDialog();
         }
@@ -201,11 +193,9 @@ namespace zelda2texteditor
             btfButton_Click(sender, e);
         }
 
-        private void EditTownNamesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EditLocationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLocations formLocations = new FormLocations();
-
-            formLocations.FullFilename = FullFilename;
+            FormLocations formLocations = new FormLocations(FullFilename);
 
             formLocations.ShowDialog();
         }

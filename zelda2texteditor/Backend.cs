@@ -27,7 +27,7 @@ namespace zelda2texteditor {
         public string getText(int length, int offset) {
 
             string romCodeString = "";
-            string excitebikeAsciiOut = "";
+            string asciiOut = "";
             string tempHexString = "";
             int x = 0;
             FileStream fileStream = new FileStream(fullFilename, FileMode.Open, FileAccess.Read);
@@ -43,12 +43,12 @@ namespace zelda2texteditor {
 
                 decodeRomText(tempHexString);
                 if (textFlag == 0) {
-                    excitebikeAsciiOut += decodeRomText(tempHexString);
+                    asciiOut += decodeRomText(tempHexString);
                 }
                 x++;
             }
             fileStream.Close();
-            return excitebikeAsciiOut;
+            return asciiOut;
         }
 
         public void updateROMText(int length, string newZString, int offset) {

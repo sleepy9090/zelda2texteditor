@@ -138,7 +138,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -185,7 +185,7 @@
             this.editlocationsToolStripMenuItem.Name = "editlocationsToolStripMenuItem";
             this.editlocationsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.editlocationsToolStripMenuItem.Text = "&Locations Text";
-            this.editlocationsToolStripMenuItem.Click += new System.EventHandler(this.EditTownNamesToolStripMenuItem_Click);
+            this.editlocationsToolStripMenuItem.Click += new System.EventHandler(this.EditLocationsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -420,7 +420,7 @@
             this.MaximizeBox = false;
             this.Name = "FormZelda2NesRomEditor";
             this.Text = "Zelda II NES ROM Text Editor";
-            this.Load += new System.EventHandler(this.FormZelda2nesRomEditor_Load);
+            this.Load += new System.EventHandler(this.FormZelda2NesRomEditor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

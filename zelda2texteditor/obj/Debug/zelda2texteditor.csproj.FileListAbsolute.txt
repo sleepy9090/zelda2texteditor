@@ -26,16 +26,16 @@ F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2tex
 F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csproj.GenerateResource.Cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Debug\zelda2texteditor.exe
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Debug\zelda2texteditor.pdb
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csprojAssemblyReference.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.AboutBox1.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormCredits.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormGeneral.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormRegistrationAndMisc.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormSpells.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormLocations.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormZelda2nesRomEditor.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormZelda2NesRomEditor.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.Properties.Resources.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csproj.GenerateResource.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csproj.CoreCompileInputs.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.exe
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.pdb
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csprojAssemblyReference.cache
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormCredits.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormGeneral.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormRegistrationAndMisc.resources
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormSpells.resources

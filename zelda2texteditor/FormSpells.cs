@@ -20,9 +20,10 @@ namespace zelda2texteditor
 
         public string FullFilename { get; set; }
 
-        public FormSpells()
+        public FormSpells(string filename)
         {
             InitializeComponent();
+            FullFilename = filename;
             SetMaxLengthOfTextBoxes();
             LoadRomData();
         }

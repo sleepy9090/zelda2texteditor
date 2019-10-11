@@ -13,18 +13,23 @@
 using System;
 using System.Windows.Forms;
 
-namespace zelda2texteditor {
-    public partial class FormLocations : Form {
+namespace zelda2texteditor
+{
+    public partial class FormLocations : Form
+    {
 
-        public FormLocations() {
+        public string FullFilename { get; set; }
+
+        public FormLocations(string filename)
+        {
             InitializeComponent();
+            FullFilename = filename;
             SetMaxLengthOfTextBoxes();
             LoadRomData();
         }
 
-        public string FullFilename { get; set; }
-
-        private void SetMaxLengthOfTextBoxes() {
+        private void SetMaxLengthOfTextBoxes()
+        {
 
             // RAURU
             loc1TextBox.MaxLength = 0x7;
@@ -131,7 +136,6 @@ namespace zelda2texteditor {
             // Do nothing
         }
 
-        // the update text button
         private void ButtonUpdate_Click(object sender, EventArgs e)
         {
             try

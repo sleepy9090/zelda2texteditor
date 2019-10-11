@@ -107,7 +107,7 @@
             this.updateButton.TabIndex = 28;
             this.updateButton.Text = "&Update";
             this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // gctextBox28
             // 
