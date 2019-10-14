@@ -67,6 +67,18 @@
     <Compile Include="FormCredits.Designer.cs">
       <DependentUpon>FormCredits.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGeneral2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeneral2.Designer.cs">
+      <DependentUpon>FormGeneral2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeneral3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeneral3.Designer.cs">
+      <DependentUpon>FormGeneral3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistrationAndMisc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGeneral.resx">
       <DependentUpon>FormGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeneral2.resx">
+      <DependentUpon>FormGeneral2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeneral3.resx">
+      <DependentUpon>FormGeneral3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrationAndMisc.resx">
       <DependentUpon>FormRegistrationAndMisc.cs</DependentUpon>

@@ -33,18 +33,20 @@
             this.textBoxFullFilename = new System.Windows.Forms.TextBox();
             this.labelFilename = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editGeneralGameTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editGameCreditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editlocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalGameTextIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalGameTextIIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxFilename = new System.Windows.Forms.TextBox();
             this.zstoryTextBox = new System.Windows.Forms.TextBox();
             this.zstoryLabel = new System.Windows.Forms.Label();
@@ -65,7 +67,7 @@
             this.zstoryeditTextBox4 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox3 = new System.Windows.Forms.TextBox();
             this.zstoryeditTextBox2 = new System.Windows.Forms.TextBox();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,105 +104,121 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
+            this.FileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(757, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // FileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenToolStripMenuItem,
             this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.ExitToolStripMenuItem});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.FileToolStripMenuItem.Text = "&File";
             // 
-            // openToolStripMenuItem
+            // OpenToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "&Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Text = "&Open";
+            this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(100, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
-            // exitToolStripMenuItem
+            // ExitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.exitToolStripMenuItem.Text = "&Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Text = "&Exit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editGeneralGameTextToolStripMenuItem,
-            this.editGameCreditsToolStripMenuItem,
-            this.editSpellsToolStripMenuItem,
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem,
-            this.editlocationsToolStripMenuItem});
+            this.GeneralToolStripMenuItem,
+            this.generalGameTextIIToolStripMenuItem,
+            this.generalGameTextIIIToolStripMenuItem,
+            this.CreditsToolStripMenuItem,
+            this.SpellsToolStripMenuItem,
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem,
+            this.LocationsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // editGeneralGameTextToolStripMenuItem
+            // GeneralToolStripMenuItem
             // 
-            this.editGeneralGameTextToolStripMenuItem.Name = "editGeneralGameTextToolStripMenuItem";
-            this.editGeneralGameTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.editGeneralGameTextToolStripMenuItem.Text = "&General Game Text";
-            this.editGeneralGameTextToolStripMenuItem.Click += new System.EventHandler(this.EditInGameTextToolStripMenuItem_Click);
+            this.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem";
+            this.GeneralToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.GeneralToolStripMenuItem.Text = "&General Game Text";
+            this.GeneralToolStripMenuItem.Click += new System.EventHandler(this.GeneralToolStripMenuItem_Click);
             // 
-            // editGameCreditsToolStripMenuItem
+            // generalGameTextIIToolStripMenuItem
             // 
-            this.editGameCreditsToolStripMenuItem.Name = "editGameCreditsToolStripMenuItem";
-            this.editGameCreditsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.editGameCreditsToolStripMenuItem.Text = "&Credits Text";
-            this.editGameCreditsToolStripMenuItem.Click += new System.EventHandler(this.EditGameCreditsToolStripMenuItem_Click);
+            this.generalGameTextIIToolStripMenuItem.Name = "generalGameTextIIToolStripMenuItem";
+            this.generalGameTextIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.generalGameTextIIToolStripMenuItem.Text = "G&eneral Game Text II";
+            this.generalGameTextIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIToolStripMenuItem_Click);
             // 
-            // editSpellsToolStripMenuItem
+            // generalGameTextIIIToolStripMenuItem
             // 
-            this.editSpellsToolStripMenuItem.Name = "editSpellsToolStripMenuItem";
-            this.editSpellsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.editSpellsToolStripMenuItem.Text = "&Spells Text";
-            this.editSpellsToolStripMenuItem.Click += new System.EventHandler(this.EditSpellsToolStripMenuItem_Click);
+            this.generalGameTextIIIToolStripMenuItem.Name = "generalGameTextIIIToolStripMenuItem";
+            this.generalGameTextIIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.generalGameTextIIIToolStripMenuItem.Text = "Ge&neral Game Text III";
+            this.generalGameTextIIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIIToolStripMenuItem_Click);
             // 
-            // editRegisistrationAndMiscellanouseTextToolStripMenuItem
+            // CreditsToolStripMenuItem
             // 
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Name = "editRegisistrationAndMiscellanouseTextToolStripMenuItem";
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Text = "&Regisistration and Miscellaneous Text";
-            this.editRegisistrationAndMiscellanouseTextToolStripMenuItem.Click += new System.EventHandler(this.EditRegistrationAndMiscTextToolStripMenuItem_Click);
+            this.CreditsToolStripMenuItem.Name = "CreditsToolStripMenuItem";
+            this.CreditsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.CreditsToolStripMenuItem.Text = "&Credits Text";
+            this.CreditsToolStripMenuItem.Click += new System.EventHandler(this.GameCreditsToolStripMenuItem_Click);
             // 
-            // editlocationsToolStripMenuItem
+            // SpellsToolStripMenuItem
             // 
-            this.editlocationsToolStripMenuItem.Name = "editlocationsToolStripMenuItem";
-            this.editlocationsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.editlocationsToolStripMenuItem.Text = "&Locations Text";
-            this.editlocationsToolStripMenuItem.Click += new System.EventHandler(this.EditLocationsToolStripMenuItem_Click);
+            this.SpellsToolStripMenuItem.Name = "SpellsToolStripMenuItem";
+            this.SpellsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.SpellsToolStripMenuItem.Text = "&Spells Text";
+            this.SpellsToolStripMenuItem.Click += new System.EventHandler(this.SpellsToolStripMenuItem_Click);
             // 
-            // helpToolStripMenuItem
+            // RegisistrationAndMiscellanouseTextToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Name = "RegisistrationAndMiscellanouseTextToolStripMenuItem";
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Text = "&Regisistration and Miscellaneous Text";
+            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Click += new System.EventHandler(this.RegistrationAndMiscTextToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // LocationsToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "&About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            this.LocationsToolStripMenuItem.Name = "LocationsToolStripMenuItem";
+            this.LocationsToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.LocationsToolStripMenuItem.Text = "&Locations Text";
+            this.LocationsToolStripMenuItem.Click += new System.EventHandler(this.LocationsToolStripMenuItem_Click);
+            // 
+            // HelpToolStripMenuItem
+            // 
+            this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutToolStripMenuItem});
+            this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
+            this.HelpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.HelpToolStripMenuItem.Text = "&Help";
+            // 
+            // AboutToolStripMenuItem
+            // 
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Text = "&About";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // textBoxFilename
             // 
@@ -261,7 +279,7 @@
             this.groupBox1.Controls.Add(this.zstoryeditTextBox4);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox3);
             this.groupBox1.Controls.Add(this.zstoryeditTextBox2);
-            this.groupBox1.Controls.Add(this.updateButton);
+            this.groupBox1.Controls.Add(this.UpdateButton);
             this.groupBox1.Controls.Add(this.zstoryLabel);
             this.groupBox1.Controls.Add(this.zstoryTextBox);
             this.groupBox1.Controls.Add(this.zstoryeditLabel);
@@ -384,15 +402,15 @@
             this.zstoryeditTextBox2.Size = new System.Drawing.Size(350, 20);
             this.zstoryeditTextBox2.TabIndex = 1;
             // 
-            // updateButton
+            // UpdateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(639, 332);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 23);
-            this.updateButton.TabIndex = 15;
-            this.updateButton.Text = "&Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            this.UpdateButton.Location = new System.Drawing.Point(639, 332);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.UpdateButton.TabIndex = 15;
+            this.UpdateButton.Text = "&Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // groupBox2
             // 
@@ -410,7 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 495);
+            this.ClientSize = new System.Drawing.Size(757, 460);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -438,24 +456,24 @@
         private System.Windows.Forms.TextBox textBoxFullFilename;
         private System.Windows.Forms.Label labelFilename;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxFilename;
         private System.Windows.Forms.TextBox zstoryTextBox;
         private System.Windows.Forms.Label zstoryLabel;
         private System.Windows.Forms.TextBox zstoryeditTextBox;
         private System.Windows.Forms.Label zstoryeditLabel;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editGeneralGameTextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editGameCreditsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editSpellsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editRegisistrationAndMiscellanouseTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GeneralToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CreditsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SpellsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RegisistrationAndMiscellanouseTextToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox zstoryeditTextBox3;
         private System.Windows.Forms.TextBox zstoryeditTextBox2;
@@ -471,7 +489,9 @@
         private System.Windows.Forms.TextBox zstoryeditTextBox10;
         private System.Windows.Forms.TextBox zstoryeditTextBox9;
         private System.Windows.Forms.TextBox zstoryeditTextBox15;
-        private System.Windows.Forms.ToolStripMenuItem editlocationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LocationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalGameTextIIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalGameTextIIIToolStripMenuItem;
     }
 }
 

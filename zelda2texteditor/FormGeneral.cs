@@ -11,7 +11,6 @@
  * 
  */
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace zelda2texteditor
@@ -26,6 +25,7 @@ namespace zelda2texteditor
             InitializeComponent();
             FullFilename = filename;
             SetMaxLengthOfTextBoxes();
+            LoadRomData();
         }
 
         private void SetMaxLengthOfTextBoxes()
@@ -620,6 +620,80 @@ namespace zelda2texteditor
                 igt65cTextBox.Text = backend.getText(0xa, 0xEC83);
                 igt66TextBox.Text = backend.getText(0xa, 0xEC8E);
                 igt66bTextBox.Text = backend.getText(0x6, 0xEC99);
+                igt66cTextBox.Text = backend.getText(0x8, 0xECA0);
+                igt66dTextBox.Text = backend.getText(0xa, 0xECA9);
+                igt67TextBox.Text = backend.getText(0x9, 0xECB4);
+                igt67bTextBox.Text = backend.getText(0x8, 0xECBE);
+                igt67cTextBox.Text = backend.getText(0x8, 0xECC7);
+                igt67dTextBox.Text = backend.getText(0x9, 0xECD0);
+                igt68TextBox.Text = backend.getText(0xa, 0xECDA);
+                igt68bTextBox.Text = backend.getText(0x5, 0xECE5);
+                igt68cTextBox.Text = backend.getText(0xa, 0xECEB);
+                igt69TextBox.Text = backend.getText(0xa, 0xED11);
+                igt69bTextBox.Text = backend.getText(0x8, 0xED1C);
+                igt69cTextBox.Text = backend.getText(0xa, 0xED25);
+                igt69dTextBox.Text = backend.getText(0x6, 0xED30);
+                igt70TextBox.Text = backend.getText(0x8, 0xED37);
+                igt70bTextBox.Text = backend.getText(0x7, 0xED40);
+                igt70cTextBox.Text = backend.getText(0xa, 0xED48);
+                igt70dTextBox.Text = backend.getText(0x4, 0xED53);
+                igt71TextBox.Text = backend.getText(0xa, 0xED59);
+                igt71bTextBox.Text = backend.getText(0x9, 0xED64);
+                igt71cTextBox.Text = backend.getText(0x8, 0xED6E);
+                igt71dTextBox.Text = backend.getText(0xa, 0xED77);
+                igt72TextBox.Text = backend.getText(0x9, 0xED82);
+                igt72bTextBox.Text = backend.getText(0x8, 0xED8C);
+                igt72cTextBox.Text = backend.getText(0x9, 0xED95);
+                igt72dTextBox.Text = backend.getText(0xa, 0xED9F);
+                igt73TextBox.Text = backend.getText(0x8, 0xEDCF);
+                igt73bTextBox.Text = backend.getText(0xa, 0xEDD8);
+                igt73cTextBox.Text = backend.getText(0xb, 0xEDE3);
+                igt74TextBox.Text = backend.getText(0x6, 0xEDEF);
+                igt74bTextBox.Text = backend.getText(0x7, 0xEDF6);
+                igt74cTextBox.Text = backend.getText(0x7, 0xEDFE);
+                igt75TextBox.Text = backend.getText(0x7, 0xEE06);
+                igt75bTextBox.Text = backend.getText(0x7, 0xEE0E);
+                igt75cTextBox.Text = backend.getText(0x7, 0xEE16);
+                igt75dTextBox.Text = backend.getText(0xa, 0xEE1E);
+                igt76TextBox.Text = backend.getText(0xa, 0xEE48);
+                igt76bTextBox.Text = backend.getText(0x9, 0xEE53);
+                igt76cTextBox.Text = backend.getText(0x6, 0xEE5D);
+                igt76dTextBox.Text = backend.getText(0xa, 0xEE64);
+                igt77TextBox.Text = backend.getText(0x8, 0xEE6F);
+                igt77bTextBox.Text = backend.getText(0x7, 0xEE78);
+                igt77cTextBox.Text = backend.getText(0x9, 0xEE80);
+                igt77dTextBox.Text = backend.getText(0xa, 0xEE8A);
+                igt78TextBox.Text = backend.getText(0x8, 0xEE95);
+                igt78bTextBox.Text = backend.getText(0x9, 0xEE9E);
+                igt78cTextBox.Text = backend.getText(0xa, 0xEEA8);
+                igt78dTextBox.Text = backend.getText(0x5, 0xEEB3);
+                igt79TextBox.Text = backend.getText(0x6, 0xEEB9);
+                igt79bTextBox.Text = backend.getText(0x8, 0xEEC0);
+                igt79cTextBox.Text = backend.getText(0x7, 0xEEC9);
+                igt79dTextBox.Text = backend.getText(0xa, 0xEED1);
+                igt80TextBox.Text = backend.getText(0x3, 0xEEDC);
+                igt80bTextBox.Text = backend.getText(0x7, 0xEEE0);
+                igt80cTextBox.Text = backend.getText(0x8, 0xEEE8);
+                igt80dTextBox.Text = backend.getText(0xa, 0xEEF1);
+                igt81TextBox.Text = backend.getText(0x8, 0xEEFC);
+                igt81bTextBox.Text = backend.getText(0x8, 0xEF05);
+                igt81cTextBox.Text = backend.getText(0x7, 0xEF0E);
+                igt81dTextBox.Text = backend.getText(0x8, 0xEF16);
+                igt82TextBox.Text = backend.getText(0xa, 0xEF40);
+                igt83TextBox.Text = backend.getText(0x5, 0xEF4B);
+                igt83bTextBox.Text = backend.getText(0x9, 0xEF51);
+                igt84TextBox.Text = backend.getText(0x8, 0xEF5B);
+                igt84bTextBox.Text = backend.getText(0x8, 0xEF64);
+                igt85TextBox.Text = backend.getText(0x9, 0xEF6D);
+                igt85bTextBox.Text = backend.getText(0x9, 0xEF77);
+                igt86TextBox.Text = backend.getText(0x7, 0xEFA5);
+                igt86bTextBox.Text = backend.getText(0xa, 0xEFAD);
+                igt86cTextBox.Text = backend.getText(0xa, 0xEFB8);
+                igt86dTextBox.Text = backend.getText(0xa, 0xEFC3);
+                igt87TextBox.Text = backend.getText(0x9, 0xE5B1);
+                igt87bTextBox.Text = backend.getText(0x9, 0xE5BB);
+                igt87cTextBox.Text = backend.getText(0x7, 0xE5C5);
+                igt87dTextBox.Text = backend.getText(0xa, 0xE5CD);
 
             }
             catch (Exception ex)
@@ -630,3048 +704,308 @@ namespace zelda2texteditor
 
         private void FormGeneral_Load(object sender, EventArgs e)
         {
-
-            fs1.Seek(0xECA0, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt66cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECA9, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt66dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECB4, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt67TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECBE, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt67bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECC7, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt67cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECD0, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt67dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECDA, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt68TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECE5, SeekOrigin.Begin);
-            while (x < 0x5)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt68bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xECEB, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt68cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED11, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt69TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED1C, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt69bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED25, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt69cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED30, SeekOrigin.Begin);
-            while (x < 0x6)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt69dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED37, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt70TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED40, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt70bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED48, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt70cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED53, SeekOrigin.Begin);
-            while (x < 0x4)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt70dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED59, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt71TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED64, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt71bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED6E, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt71cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED77, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt71dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED82, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt72TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED8C, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt72bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED95, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt72cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xED9F, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt72dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDCF, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt73TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDD8, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt73bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDE3, SeekOrigin.Begin);
-            while (x < 0xb)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt73cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDEF, SeekOrigin.Begin);
-            while (x < 0x6)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt74TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDF6, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt74bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEDFE, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt74cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE06, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt75TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE0E, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt75bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE16, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt75cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE1E, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt75dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE48, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt76TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE53, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt76bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE5D, SeekOrigin.Begin);
-            while (x < 0x6)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt76cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE64, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt76dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE6F, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt77TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE78, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt77bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE80, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt77cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE8A, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt77dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE95, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt78TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEE9E, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt78bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEA8, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt78cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEB3, SeekOrigin.Begin);
-            while (x < 0x5)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt78dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEB9, SeekOrigin.Begin);
-            while (x < 0x6)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt79TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEC0, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt79bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEC9, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt79cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEED1, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt79dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEDC, SeekOrigin.Begin);
-            while (x < 0x3)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt80TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEE0, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt80bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEE8, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt80cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEF1, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt80dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEEFC, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt81TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF05, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt81bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF0E, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt81cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF16, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt81dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF40, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt82TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF4B, SeekOrigin.Begin);
-            while (x < 0x5)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt83TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF51, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt83bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF5B, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt84TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF64, SeekOrigin.Begin);
-            while (x < 0x8)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt84bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF6D, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt85TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEF77, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt85bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEFA5, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt86TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEFAD, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt86bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEFB8, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt86cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xEFC3, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt86dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE5B1, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt87TextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE5BB, SeekOrigin.Begin);
-            while (x < 0x9)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt87bTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE5C5, SeekOrigin.Begin);
-            while (x < 0x7)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt87cTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Seek(0xE5CD, SeekOrigin.Begin);
-            while (x < 0xa)
-            {
-                rctext = fs1.ReadByte().ToString("X");
-                if (rctext.Length == 1)
-                {
-                    rctext = "0" + rctext;
-                }
-                temphex = rctext;
-                decodeZText();
-                if (textFlag == 0)
-                {
-                    zeldaAsciiRet += decodeZText();
-                }
-                x++;
-            }
-            igt87dTextBox.Text = zeldaAsciiRet;
-            zeldaAsciiRet = "";
-            x = 0;
-
-            fs1.Close();
+            // Do nothing
         }
 
-
-
-
-
-
-
-
-        
-        private void updateButton_Click(object sender, EventArgs e)
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
-
-
-            //1
-            //these 3 values need set and the rest is history
-            newgcString = igt1TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE390;
-            writeByte();
-
-            //call function, set value, call function
-            newgcString = igt1bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE39B;
-            writeByte();
-
-            newgcString = igt1cTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xE3A3;
-            writeByte();
-
-            newgcString = igt2TextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xE3A8;
-            writeByte();
-
-            newgcString = igt2bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE3AD;
-            writeByte();
-
-            newgcString = igt3TextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE3B5;
-            writeByte();
-
-            newgcString = igt3bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE3BB;
-            writeByte();
-
-            newgcString = igt3cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE3C3;
-            writeByte();
-
-            newgcString = igt4TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE3CE;
-            writeByte();
-
-            newgcString = igt4bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE3D7;
-            writeByte();
-
-            newgcString = igt5TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE3E2;
-            writeByte();
-
-            newgcString = igt5bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE3ED;
-            writeByte();
-
-            newgcString = igt6TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE3F8;
-            writeByte();
-
-            newgcString = igt6bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE402;
-            writeByte();
-
-            newgcString = igt7TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE40B;
-            writeByte();
-
-            newgcString = igt7bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE415;
-            writeByte();
-
-            newgcString = igt7cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE41E;
-            writeByte();
-
-            newgcString = igt7dTextBox.Text;
-            newgcString = newgcString.PadRight(0xb);
-            offset = 0xE429;
-            writeByte();
-
-            newgcString = igt8TextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE435;
-            writeByte();
-
-            newgcString = igt9TextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE43C;
-            writeByte();
-
-            newgcString = igt9bTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE442;
-            writeByte();
-
-            newgcString = igt9cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE448;
-            writeByte();
-
-            newgcString = igt10TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE450;
-            writeByte();
-
-            newgcString = igt10bTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE457;
-            writeByte();
-
-            newgcString = igt10cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE45E;
-            writeByte();
-
-            newgcString = igt11TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE467;
-            writeByte();
-
-            newgcString = igt11bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE471;
-            writeByte();
-
-            newgcString = igt11cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE47C;
-            writeByte();
-
-            newgcString = igt11dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE487;
-            writeByte();
-
-            newgcString = igt12TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE491;
-            writeByte();
-
-            newgcString = igt12bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE49A;
-            writeByte();
-
-            newgcString = igt12cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE4A3;
-            writeByte();
-
-            newgcString = igt12dTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE4AC;
-            writeByte();
-
-            newgcString = igt13TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE4B4;
-            writeByte();
-
-            newgcString = igt13bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE4BD;
-            writeByte();
-
-            newgcString = igt13cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE4C8;
-            writeByte();
-
-            newgcString = igt13dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE4D2;
-            writeByte();
-
-            newgcString = igt14TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE4F1;
-            writeByte();
-
-            newgcString = igt14bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE5FC;
-            writeByte();
-
-            newgcString = igt14cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE506;
-            writeByte();
-
-            newgcString = igt14dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE50E;
-            writeByte();
-
-            newgcString = igt15TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE517;
-            writeByte();
-
-            newgcString = igt15bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE521;
-            writeByte();
-
-            newgcString = igt15cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE529;
-            writeByte();
-
-            newgcString = igt15dTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE533;
-            writeByte();
-
-            newgcString = igt16TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE53B;
-            writeByte();
-
-            newgcString = igt16bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE545;
-            writeByte();
-
-            newgcString = igt16cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE550;
-            writeByte();
-
-            newgcString = igt16dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE559;
-            writeByte();
-
-            //-----
-
-            newgcString = igt17TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE58E;
-            writeByte();
-
-            newgcString = igt17bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE597;
-            writeByte();
-
-            newgcString = igt17cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE5A0;
-            writeByte();
-
-            newgcString = igt17dTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE5A9;
-            writeByte();
-
-            newgcString = igt18TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE5D8;
-            writeByte();
-
-            newgcString = igt18bTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE5E2;
-            writeByte();
-
-            newgcString = igt18cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE5E8;
-            writeByte();
-
-            newgcString = igt18dTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE5F2;
-            writeByte();
-
-            newgcString = igt19TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE5FA;
-            writeByte();
-
-            newgcString = igt19bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE605;
-            writeByte();
-
-            newgcString = igt19cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE60F;
-            writeByte();
-
-            newgcString = igt19dTextBox.Text;
-            newgcString = newgcString.PadRight(0xb);
-            offset = 0xE618;
-            writeByte();
-
-            newgcString = igt20TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE632;
-            writeByte();
-
-            newgcString = igt20bTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE63C;
-            writeByte();
-
-            newgcString = igt20cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE643;
-            writeByte();
-
-            newgcString = igt20dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE64D;
-            writeByte();
-
-            newgcString = igt21TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE654;
-            writeByte();
-
-            newgcString = igt21bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE65B;
-            writeByte();
-
-            newgcString = igt22TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE666;
-            writeByte();
-
-            newgcString = igt22bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE66E;
-            writeByte();
-
-            newgcString = igt22cTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE677;
-            writeByte();
-
-            newgcString = igt22dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE67F;
-            writeByte();
-
-            newgcString = igt23TextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xE6AC;
-            writeByte();
-
-            newgcString = igt23bTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE6B1;
-            writeByte();
-
-            newgcString = igt24TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE6B8;
-            writeByte();
-
-            newgcString = igt24bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE6C1;
-            writeByte();
-
-            newgcString = igt24cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE6CC;
-            writeByte();
-
-            newgcString = igt24dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE6D7;
-            writeByte();
-
-            newgcString = igt25TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE6E1;
-            writeByte();
-
-            newgcString = igt25bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE6EB;
-            writeByte();
-
-            newgcString = igt25cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE6F6;
-            writeByte();
-
-            newgcString = igt25dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE6FE;
-            writeByte();
-
-            newgcString = igt26TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE705;
-            writeByte();
-
-            newgcString = igt26bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE70D;
-            writeByte();
-
-            newgcString = igt26cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE717;
-            writeByte();
-
-            newgcString = igt26dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE722;
-            writeByte();
-
-            newgcString = igt27TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE747;
-            writeByte();
-
-            newgcString = igt27bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE74E;
-            writeByte();
-
-            newgcString = igt27cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE759;
-            writeByte();
-
-            newgcString = igt29TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE763;
-            writeByte();
-
-            //30.
-            newgcString = igt30TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE76C;
-            writeByte();
-
-            newgcString = igt30bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE777;
-            writeByte();
-
-            newgcString = igt30cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE782;
-            writeByte();
-
-            newgcString = igt30dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE78D;
-            writeByte();
-
-            newgcString = igt31TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE798;
-            writeByte();
-
-            newgcString = igt31bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE7A1;
-            writeByte();
-
-            newgcString = igt31cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE7AC;
-            writeByte();
-
-            newgcString = igt31dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE7B5;
-            writeByte();
-
-            newgcString = igt32TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE7BF;
-            writeByte();
-
-            newgcString = igt32bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE7C9;
-            writeByte();
-
-            newgcString = igt32cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE7D3;
-            writeByte();
-
-            newgcString = igt32dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE7DE;
-            writeByte();
-
-            newgcString = igt33TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE80E;
-            writeByte();
-
-            newgcString = igt33bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE818;
-            writeByte();
-
-            newgcString = igt33cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE821;
-            writeByte();
-
-            newgcString = igt33dTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xE82C;
-            writeByte();
-
-            newgcString = igt34TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE833;
-            writeByte();
-
-            newgcString = igt34bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE83C;
-            writeByte();
-
-            newgcString = igt34cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE847;
-            writeByte();
-
-            newgcString = igt34dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE852;
-            writeByte();
-
-            newgcString = igt35TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE85D;
-            writeByte();
-
-            newgcString = igt35bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE867;
-            writeByte();
-
-            newgcString = igt35cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE872;
-            writeByte();
-
-            newgcString = igt35dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE87D;
-            writeByte();
-
-            newgcString = igt36TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE888;
-            writeByte();
-
-            newgcString = igt36bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE893;
-            writeByte();
-
-            newgcString = igt36cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE89D;
-            writeByte();
-
-            newgcString = igt36dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE8A7;
-            writeByte();
-
-            newgcString = igt37TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE8B2;
-            writeByte();
-
-            newgcString = igt37bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE8BD;
-            writeByte();
-
-            newgcString = igt37cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE8C7;
-            writeByte();
-
-            newgcString = igt37dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xE8D1;
-            writeByte();
-
-            newgcString = igt38TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE8F0;
-            writeByte();
-
-            newgcString = igt38bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE8F9;
-            writeByte();
-
-            newgcString = igt38cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE902;
-            writeByte();
-
-            newgcString = igt38dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE90C;
-            writeByte();
-
-            newgcString = igt39TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE917;
-            writeByte();
-
-            newgcString = igt39bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE922;
-            writeByte();
-
-            newgcString = igt39cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE92B;
-            writeByte();
-
-            newgcString = igt39dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE934;
-            writeByte();
-
-            newgcString = igt40TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE93E;
-            writeByte();
-
-            newgcString = igt40bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE948;
-            writeByte();
-
-            newgcString = igt40cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE951;
-            writeByte();
-
-            newgcString = igt40dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE95C;
-            writeByte();
-
-            newgcString = igt41TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE965;
-            writeByte();
-
-            newgcString = igt41bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE96F;
-            writeByte();
-
-            newgcString = igt41cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE977;
-            writeByte();
-
-            newgcString = igt41dTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE981;
-            writeByte();
-
-            newgcString = igt42TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE9AE;
-            writeByte();
-
-            newgcString = igt42bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE9B7;
-            writeByte();
-
-            newgcString = igt42cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE9C2;
-            writeByte();
-
-            newgcString = igt42dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xE9CB;
-            writeByte();
-
-            newgcString = igt43TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE9D4;
-            writeByte();
-
-            newgcString = igt43bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE9DF;
-            writeByte();
-
-            newgcString = igt43cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE9EA;
-            writeByte();
-
-            newgcString = igt43dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE9F5;
-            writeByte();
-
-            newgcString = igt44TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEA00;
-            writeByte();
-
-            //you are here
-
-            newgcString = igt45TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEA07;
-            writeByte();
-
-            newgcString = igt45bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEA12;
-            writeByte();
-
-            newgcString = igt45cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEA1C;
-            writeByte();
-
-            newgcString = igt45dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEA25;
-            writeByte();
-
-            newgcString = igt46TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEA43;
-            writeByte();
-
-            newgcString = igt46bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEA4B;
-            writeByte();
-
-            newgcString = igt47TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEA56;
-            writeByte();
-
-            newgcString = igt48TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEA5F;
-            writeByte();
-
-            newgcString = igt49TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEA6A;
-            writeByte();
-
-            newgcString = igt49bTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xEA74;
-            writeByte();
-
-            newgcString = igt50TextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xEA79;
-            writeByte();
-
-            newgcString = igt50bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEA7E;
-            writeByte();
-
-            newgcString = igt50cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEA89;
-            writeByte();
-
-            newgcString = igt51TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEA93;
-            writeByte();
-
-            newgcString = igt51bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEA9A;
-            writeByte();
-
-            newgcString = igt52TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEAA3;
-            writeByte();
-
-            newgcString = igt52bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEAAA;
-            writeByte();
-
-            newgcString = igt52cTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xEAB3;
-            writeByte();
-
-            newgcString = igt53TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEAB9;
-            writeByte();
-
-            newgcString = igt53bTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xEAC2;
-            writeByte();
-
-            newgcString = igt53cTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEAC7;
-            writeByte();
-
-            newgcString = igt54TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEACF;
-            writeByte();
-
-            newgcString = igt54bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEAD9;
-            writeByte();
-
-            newgcString = igt55TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEAE3;
-            writeByte();
-
-            newgcString = igt55bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEAED;
-            writeByte();
-
-            newgcString = igt55cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEAF8;
-            writeByte();
-
-            newgcString = igt55dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEB02;
-            writeByte();
-
-            newgcString = igt56TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEB0C;
-            writeByte();
-
-            newgcString = igt56bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEB16;
-            writeByte();
-
-            newgcString = igt56cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEB1E;
-            writeByte();
-
-            newgcString = igt56dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEB29;
-            writeByte();
-
-            newgcString = igt57TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEB49;
-            writeByte();
-
-            newgcString = igt57bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEB51;
-            writeByte();
-
-            newgcString = igt57cTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xEB5A;
-            writeByte();
-
-            newgcString = igt58TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEB61;
-            writeByte();
-
-            newgcString = igt58bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEB6B;
-            writeByte();
-
-            newgcString = igt58cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEB76;
-            writeByte();
-
-            newgcString = igt58dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEB81;
-            writeByte();
-
-            newgcString = igt59TextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xEB8A;
-            writeByte();
-
-            newgcString = igt59bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEB8F;
-            writeByte();
-
-            newgcString = igt60TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEB98;
-            writeByte();
-
-            newgcString = igt60bTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEBA1;
-            writeByte();
-
-            newgcString = igt60cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEBA8;
-            writeByte();
-
-            newgcString = igt60dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEBB0;
-            writeByte();
-
-            newgcString = igt61TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEBBA;
-            writeByte();
-
-            newgcString = igt61bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEBC5;
-            writeByte();
-
-            newgcString = igt61cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEBCD;
-            writeByte();
-
-            newgcString = igt61dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEBD5;
-            writeByte();
-
-            newgcString = igt62TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEBE0;
-            writeByte();
-
-            newgcString = igt62bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEBE8;
-            writeByte();
-
-            newgcString = igt62cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEBF3;
-            writeByte();
-
-            newgcString = igt62dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEBFB;
-            writeByte();
-
-            newgcString = igt63TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEC05;
-            writeByte();
-
-            newgcString = igt63bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEC0F;
-            writeByte();
-
-            newgcString = igt63cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEC18;
-            writeByte();
-
-            newgcString = igt64TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEC4E;
-            writeByte();
-
-            newgcString = igt64bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEC57;
-            writeByte();
-
-            newgcString = igt64cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEC61;
-            writeByte();
-
-            newgcString = igt64dTextBox.Text;
-            newgcString = newgcString.PadRight(0x3);
-            offset = 0xEC6C;
-            writeByte();
-
-            newgcString = igt65TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEC70;
-            writeByte();
-
-            newgcString = igt65bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEC7A;
-            writeByte();
-
-            newgcString = igt65cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEC83;
-            writeByte();
-
-            newgcString = igt66TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEC8E;
-            writeByte();
-
-            newgcString = igt66bTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEC99;
-            writeByte();
-
-            newgcString = igt66cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xECA0;
-            writeByte();
-
-            newgcString = igt66dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xECA9;
-            writeByte();
-
-            newgcString = igt67TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xECB4;
-            writeByte();
-
-            newgcString = igt67bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xECBE;
-            writeByte();
-
-            newgcString = igt67cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xECC7;
-            writeByte();
-
-            newgcString = igt67dTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xECD0;
-            writeByte();
-
-            newgcString = igt68TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xECDA;
-            writeByte();
-
-            newgcString = igt68bTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xECE5;
-            writeByte();
-
-            newgcString = igt68cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xECEB;
-            writeByte();
-
-            newgcString = igt69TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED11;
-            writeByte();
-
-            newgcString = igt69bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xED1C;
-            writeByte();
-
-            newgcString = igt69cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED25;
-            writeByte();
-
-            newgcString = igt69dTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xED30;
-            writeByte();
-
-            newgcString = igt70TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xED37;
-            writeByte();
-
-            newgcString = igt70bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xED40;
-            writeByte();
-
-            newgcString = igt70cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED48;
-            writeByte();
-
-            newgcString = igt70dTextBox.Text;
-            newgcString = newgcString.PadRight(0x4);
-            offset = 0xED53;
-            writeByte();
-
-            newgcString = igt71TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED59;
-            writeByte();
-
-            newgcString = igt71bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xED64;
-            writeByte();
-
-            newgcString = igt71cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xED6E;
-            writeByte();
-
-            newgcString = igt71dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED77;
-            writeByte();
-
-            newgcString = igt72TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xED82;
-            writeByte();
-
-            newgcString = igt72bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xED8C;
-            writeByte();
-
-            newgcString = igt72cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xED95;
-            writeByte();
-
-            newgcString = igt72dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xED9F;
-            writeByte();
-
-            newgcString = igt73TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEDCF;
-            writeByte();
-
-            newgcString = igt73bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEDD8;
-            writeByte();
-
-            newgcString = igt73cTextBox.Text;
-            newgcString = newgcString.PadRight(0xb);
-            offset = 0xEDE3;
-            writeByte();
-
-            newgcString = igt74TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEDEF;
-            writeByte();
-
-            newgcString = igt74bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEDF6;
-            writeByte();
-
-            newgcString = igt74cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEDFE;
-            writeByte();
-
-            newgcString = igt75TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEE06;
-            writeByte();
-
-            newgcString = igt75bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEE0E;
-            writeByte();
-
-            newgcString = igt75cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEE16;
-            writeByte();
-
-            newgcString = igt75dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEE1E;
-            writeByte();
-
-            newgcString = igt76TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEE48;
-            writeByte();
-
-            newgcString = igt76bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEE53;
-            writeByte();
-
-            newgcString = igt76cTextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEE5D;
-            writeByte();
-
-            newgcString = igt76dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEE64;
-            writeByte();
-
-            newgcString = igt77TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEE6F;
-            writeByte();
-
-            newgcString = igt77bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEE78;
-            writeByte();
-
-            newgcString = igt77cTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEE80;
-            writeByte();
-
-            newgcString = igt77dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEE8A;
-            writeByte();
-
-            newgcString = igt78TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEE95;
-            writeByte();
-
-            newgcString = igt78bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEE9E;
-            writeByte();
-
-            newgcString = igt78cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEEA8;
-            writeByte();
-
-            newgcString = igt78dTextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xEEB3;
-            writeByte();
-
-            newgcString = igt79TextBox.Text;
-            newgcString = newgcString.PadRight(0x6);
-            offset = 0xEEB9;
-            writeByte();
-
-            newgcString = igt79bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEEC0;
-            writeByte();
-
-            newgcString = igt79cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEEC9;
-            writeByte();
-
-            newgcString = igt79dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEED1;
-            writeByte();
-
-            newgcString = igt80TextBox.Text;
-            newgcString = newgcString.PadRight(0x3);
-            offset = 0xEEDC;
-            writeByte();
-
-            newgcString = igt80bTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEEE0;
-            writeByte();
-
-            newgcString = igt80cTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEEE8;
-            writeByte();
-
-            newgcString = igt80dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEEF1;
-            writeByte();
-
-            newgcString = igt81TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEEFC;
-            writeByte();
-
-            newgcString = igt81bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEF05;
-            writeByte();
-
-            newgcString = igt81cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEF0E;
-            writeByte();
-
-            newgcString = igt81dTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEF16;
-            writeByte();
-
-            newgcString = igt82TextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEF40;
-            writeByte();
-
-            newgcString = igt83TextBox.Text;
-            newgcString = newgcString.PadRight(0x5);
-            offset = 0xEF4B;
-            writeByte();
-
-            newgcString = igt83bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEF51;
-            writeByte();
-
-            newgcString = igt84TextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEF5B;
-            writeByte();
-
-            newgcString = igt84bTextBox.Text;
-            newgcString = newgcString.PadRight(0x8);
-            offset = 0xEF64;
-            writeByte();
-
-            newgcString = igt85TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEF6D;
-            writeByte();
-
-            newgcString = igt85bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xEF77;
-            writeByte();
-
-            newgcString = igt86TextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xEFA5;
-            writeByte();
-
-            newgcString = igt86bTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEFAD;
-            writeByte();
-
-            newgcString = igt86cTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEFB8;
-            writeByte();
-
-            newgcString = igt86dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xEFC3;
-            writeByte();
-
-            newgcString = igt87TextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE5B1;
-            writeByte();
-
-            newgcString = igt87bTextBox.Text;
-            newgcString = newgcString.PadRight(0x9);
-            offset = 0xE5BB;
-            writeByte();
-
-            newgcString = igt87cTextBox.Text;
-            newgcString = newgcString.PadRight(0x7);
-            offset = 0xE5C5;
-            writeByte();
-
-            newgcString = igt87dTextBox.Text;
-            newgcString = newgcString.PadRight(0xa);
-            offset = 0xE5CD;
-            writeByte();
-
-            MessageBox.Show("Updated!", "In Game Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            try
+            {
+                Backend backend = new Backend(FullFilename);
+
+                backend.updateROMText(0xa, igt1TextBox.Text, 0xE390);
+                backend.updateROMText(0x7, igt1bTextBox.Text, 0xE39B);
+                backend.updateROMText(0x4, igt1cTextBox.Text, 0xE3A3);
+                backend.updateROMText(0x4, igt2TextBox.Text, 0xE3A8);
+                backend.updateROMText(0x7, igt2bTextBox.Text, 0xE3AD);
+                backend.updateROMText(0x5, igt3TextBox.Text, 0xE3B5);
+                backend.updateROMText(0x7, igt3bTextBox.Text, 0xE3BB);
+                backend.updateROMText(0xa, igt3cTextBox.Text, 0xE3C3);
+                backend.updateROMText(0x8, igt4TextBox.Text, 0xE3CE);
+                backend.updateROMText(0xa, igt4bTextBox.Text, 0xE3D7);
+                backend.updateROMText(0xa, igt5TextBox.Text, 0xE3E2);
+                backend.updateROMText(0xa, igt5bTextBox.Text, 0xE3ED);
+                backend.updateROMText(0x9, igt6TextBox.Text, 0xE3F8);
+                backend.updateROMText(0x8, igt6bTextBox.Text, 0xE402);
+                backend.updateROMText(0x9, igt7TextBox.Text, 0xE40B);
+                backend.updateROMText(0x8, igt7bTextBox.Text, 0xE415);
+                backend.updateROMText(0xa, igt7cTextBox.Text, 0xE41E);
+                backend.updateROMText(0xb, igt7dTextBox.Text, 0xE429);
+                backend.updateROMText(0x5, igt8TextBox.Text, 0xE435);
+                backend.updateROMText(0x5, igt9TextBox.Text, 0xE43C);
+                backend.updateROMText(0x5, igt9bTextBox.Text, 0xE442);
+                backend.updateROMText(0x7, igt9cTextBox.Text, 0xE448);
+                backend.updateROMText(0x6, igt10TextBox.Text, 0xE450);
+                backend.updateROMText(0x6, igt10bTextBox.Text, 0xE457);
+                backend.updateROMText(0x8, igt10cTextBox.Text, 0xE45E);
+                backend.updateROMText(0x8, igt11TextBox.Text, 0xE467);
+                backend.updateROMText(0xa, igt11bTextBox.Text, 0xE471);
+                backend.updateROMText(0xa, igt11cTextBox.Text, 0xE47C);
+                backend.updateROMText(0x9, igt11dTextBox.Text, 0xE487);
+                backend.updateROMText(0x8, igt12TextBox.Text, 0xE491);
+                backend.updateROMText(0x8, igt12bTextBox.Text, 0xE49A);
+                backend.updateROMText(0x8, igt12cTextBox.Text, 0xE4A3);
+                backend.updateROMText(0x7, igt12dTextBox.Text, 0xE4AC);
+                backend.updateROMText(0x8, igt13TextBox.Text, 0xE4B4);
+                backend.updateROMText(0xa, igt13bTextBox.Text, 0xE4BD);
+                backend.updateROMText(0x9, igt13cTextBox.Text, 0xE4C8);
+                backend.updateROMText(0xa, igt13dTextBox.Text, 0xE4D2);
+                backend.updateROMText(0xa, igt14TextBox.Text, 0xE4F1);
+                backend.updateROMText(0x9, igt14bTextBox.Text, 0xE5FC);
+                backend.updateROMText(0x7, igt14cTextBox.Text, 0xE506);
+                backend.updateROMText(0x8, igt14dTextBox.Text, 0xE50E);
+                backend.updateROMText(0x9, igt15TextBox.Text, 0xE517);
+                backend.updateROMText(0x7, igt15bTextBox.Text, 0xE521);
+                backend.updateROMText(0x9, igt15cTextBox.Text, 0xE529);
+                backend.updateROMText(0x7, igt15dTextBox.Text, 0xE533);
+                backend.updateROMText(0x9, igt16TextBox.Text, 0xE53B);
+                backend.updateROMText(0xa, igt16bTextBox.Text, 0xE545);
+                backend.updateROMText(0x8, igt16cTextBox.Text, 0xE550);
+                backend.updateROMText(0x9, igt16dTextBox.Text, 0xE559);
+                backend.updateROMText(0x8, igt17TextBox.Text, 0xE58E);
+                backend.updateROMText(0x8, igt17bTextBox.Text, 0xE597);
+                backend.updateROMText(0x8, igt17cTextBox.Text, 0xE5A0);
+                backend.updateROMText(0x7, igt17dTextBox.Text, 0xE5A9);
+                backend.updateROMText(0x9, igt18TextBox.Text, 0xE5D8);
+                backend.updateROMText(0x5, igt18bTextBox.Text, 0xE5E2);
+                backend.updateROMText(0x9, igt18cTextBox.Text, 0xE5E8);
+                backend.updateROMText(0x7, igt18dTextBox.Text, 0xE5F2);
+                backend.updateROMText(0xa, igt19TextBox.Text, 0xE5FA);
+                backend.updateROMText(0x9, igt19bTextBox.Text, 0xE605);
+                backend.updateROMText(0x8, igt19cTextBox.Text, 0xE60F);
+                backend.updateROMText(0xb, igt19dTextBox.Text, 0xE618);
+                backend.updateROMText(0x9, igt20TextBox.Text, 0xE632);
+                backend.updateROMText(0x6, igt20bTextBox.Text, 0xE63C);
+                backend.updateROMText(0x9, igt20cTextBox.Text, 0xE643);
+                backend.updateROMText(0x6, igt20dTextBox.Text, 0xE64D);
+                backend.updateROMText(0x6, igt21TextBox.Text, 0xE654);
+                backend.updateROMText(0xa, igt21bTextBox.Text, 0xE65B);
+                backend.updateROMText(0x7, igt22TextBox.Text, 0xE666);
+                backend.updateROMText(0x8, igt22bTextBox.Text, 0xE66E);
+                backend.updateROMText(0x6, igt22cTextBox.Text, 0xE677);
+                backend.updateROMText(0xa, igt22dTextBox.Text, 0xE67F);
+                backend.updateROMText(0x4, igt23TextBox.Text, 0xE6AC);
+                backend.updateROMText(0x6, igt23bTextBox.Text, 0xE6B1);
+                backend.updateROMText(0x8, igt24TextBox.Text, 0xE6B8);
+                backend.updateROMText(0xa, igt24bTextBox.Text, 0xE6C1);
+                backend.updateROMText(0xa, igt24cTextBox.Text, 0xE6CC);
+                backend.updateROMText(0x9, igt24dTextBox.Text, 0xE6D7);
+                backend.updateROMText(0x9, igt25TextBox.Text, 0xE6E1);
+                backend.updateROMText(0xa, igt25bTextBox.Text, 0xE6EB);
+                backend.updateROMText(0x7, igt25cTextBox.Text, 0xE6F6);
+                backend.updateROMText(0x6, igt25dTextBox.Text, 0xE6FE);
+                backend.updateROMText(0x7, igt26TextBox.Text, 0xE705);
+                backend.updateROMText(0x9, igt26bTextBox.Text, 0xE70D);
+                backend.updateROMText(0xa, igt26cTextBox.Text, 0xE717);
+                backend.updateROMText(0xa, igt26dTextBox.Text, 0xE722);
+                backend.updateROMText(0x6, igt27TextBox.Text, 0xE747);
+                backend.updateROMText(0xa, igt27bTextBox.Text, 0xE74E);
+                backend.updateROMText(0x9, igt27cTextBox.Text, 0xE759);
+                backend.updateROMText(0x8, igt29TextBox.Text, 0xE763);
+                backend.updateROMText(0xa, igt30TextBox.Text, 0xE76C);
+                backend.updateROMText(0xa, igt30bTextBox.Text, 0xE777);
+                backend.updateROMText(0xa, igt30cTextBox.Text, 0xE782);
+                backend.updateROMText(0xa, igt30dTextBox.Text, 0xE78D);
+                backend.updateROMText(0x8, igt31TextBox.Text, 0xE798);
+                backend.updateROMText(0xa, igt31bTextBox.Text, 0xE7A1);
+                backend.updateROMText(0x8, igt31cTextBox.Text, 0xE7AC);
+                backend.updateROMText(0x9, igt31dTextBox.Text, 0xE7B5);
+                backend.updateROMText(0x9, igt32TextBox.Text, 0xE7BF);
+                backend.updateROMText(0x9, igt32bTextBox.Text, 0xE7C9);
+                backend.updateROMText(0xa, igt32cTextBox.Text, 0xE7D3);
+                backend.updateROMText(0xa, igt32dTextBox.Text, 0xE7DE);
+                backend.updateROMText(0x9, igt33TextBox.Text, 0xE80E);
+                backend.updateROMText(0x8, igt33bTextBox.Text, 0xE818);
+                backend.updateROMText(0xa, igt33cTextBox.Text, 0xE821);
+                backend.updateROMText(0x5, igt33dTextBox.Text, 0xE82C);
+                backend.updateROMText(0x8, igt34TextBox.Text, 0xE833);
+                backend.updateROMText(0xa, igt34bTextBox.Text, 0xE83C);
+                backend.updateROMText(0xa, igt34cTextBox.Text, 0xE847);
+                backend.updateROMText(0xa, igt34dTextBox.Text, 0xE852);
+                backend.updateROMText(0x9, igt35TextBox.Text, 0xE85D);
+                backend.updateROMText(0xa, igt35bTextBox.Text, 0xE867);
+                backend.updateROMText(0xa, igt35cTextBox.Text, 0xE872);
+                backend.updateROMText(0xa, igt35dTextBox.Text, 0xE87D);
+                backend.updateROMText(0xa, igt36TextBox.Text, 0xE888);
+                backend.updateROMText(0x9, igt36bTextBox.Text, 0xE893);
+                backend.updateROMText(0x9, igt36cTextBox.Text, 0xE89D);
+                backend.updateROMText(0xa, igt36dTextBox.Text, 0xE8A7);
+                backend.updateROMText(0xa, igt37TextBox.Text, 0xE8B2);
+                backend.updateROMText(0x9, igt37bTextBox.Text, 0xE8BD);
+                backend.updateROMText(0x9, igt37cTextBox.Text, 0xE8C7);
+                backend.updateROMText(0x6, igt37dTextBox.Text, 0xE8D1);
+                backend.updateROMText(0x8, igt38TextBox.Text, 0xE8F0);
+                backend.updateROMText(0x8, igt38bTextBox.Text, 0xE8F9);
+                backend.updateROMText(0x9, igt38cTextBox.Text, 0xE902);
+                backend.updateROMText(0xa, igt38dTextBox.Text, 0xE90C);
+                backend.updateROMText(0xa, igt39TextBox.Text, 0xE917);
+                backend.updateROMText(0x8, igt39bTextBox.Text, 0xE922);
+                backend.updateROMText(0x8, igt39cTextBox.Text, 0xE92B);
+                backend.updateROMText(0x8, igt39dTextBox.Text, 0xE934);
+                backend.updateROMText(0x9, igt40TextBox.Text, 0xE93E);
+                backend.updateROMText(0x8, igt40bTextBox.Text, 0xE948);
+                backend.updateROMText(0xa, igt40cTextBox.Text, 0xE951);
+                backend.updateROMText(0x8, igt40dTextBox.Text, 0xE95C);
+                backend.updateROMText(0x9, igt41TextBox.Text, 0xE965);
+                backend.updateROMText(0x7, igt41bTextBox.Text, 0xE96F);
+                backend.updateROMText(0x9, igt41cTextBox.Text, 0xE977);
+                backend.updateROMText(0x7, igt41dTextBox.Text, 0xE981);
+                backend.updateROMText(0x8, igt42TextBox.Text, 0xE9AE);
+                backend.updateROMText(0xa, igt42bTextBox.Text, 0xE9B7);
+                backend.updateROMText(0x8, igt42cTextBox.Text, 0xE9C2);
+                backend.updateROMText(0x8, igt42dTextBox.Text, 0xE9CB);
+                backend.updateROMText(0xa, igt43TextBox.Text, 0xE9D4);
+                backend.updateROMText(0xa, igt43bTextBox.Text, 0xE9DF);
+                backend.updateROMText(0xa, igt43cTextBox.Text, 0xE9EA);
+                backend.updateROMText(0xa, igt43dTextBox.Text, 0xE9F5);
+                backend.updateROMText(0x6, igt44TextBox.Text, 0xEA00);
+                backend.updateROMText(0xa, igt45TextBox.Text, 0xEA07);
+                backend.updateROMText(0x9, igt45bTextBox.Text, 0xEA12);
+                backend.updateROMText(0x8, igt45cTextBox.Text, 0xEA1C);
+                backend.updateROMText(0xa, igt45dTextBox.Text, 0xEA25);
+                backend.updateROMText(0x7, igt46TextBox.Text, 0xEA43);
+                backend.updateROMText(0xa, igt46bTextBox.Text, 0xEA4B);
+                backend.updateROMText(0x7, igt47TextBox.Text, 0xEA56);
+                backend.updateROMText(0xa, igt48TextBox.Text, 0xEA5F);
+                backend.updateROMText(0x9, igt49TextBox.Text, 0xEA6A);
+                backend.updateROMText(0x4, igt49bTextBox.Text, 0xEA74);
+                backend.updateROMText(0x4, igt50TextBox.Text, 0xEA79);
+                backend.updateROMText(0xa, igt50bTextBox.Text, 0xEA7E);
+                backend.updateROMText(0x9, igt50cTextBox.Text, 0xEA89);
+                backend.updateROMText(0x6, igt51TextBox.Text, 0xEA93);
+                backend.updateROMText(0x8, igt51bTextBox.Text, 0xEA9A);
+                backend.updateROMText(0x6, igt52TextBox.Text, 0xEAA3);
+                backend.updateROMText(0x8, igt52bTextBox.Text, 0xEAAA);
+                backend.updateROMText(0x4, igt52cTextBox.Text, 0xEAB3);
+                backend.updateROMText(0x8, igt53TextBox.Text, 0xEAB9);
+                backend.updateROMText(0x4, igt53bTextBox.Text, 0xEAC2);
+                backend.updateROMText(0x6, igt53cTextBox.Text, 0xEAC7);
+                backend.updateROMText(0x9, igt54TextBox.Text, 0xEACF);
+                backend.updateROMText(0x9, igt54bTextBox.Text, 0xEAD9);
+                backend.updateROMText(0x9, igt55TextBox.Text, 0xEAE3);
+                backend.updateROMText(0xa, igt55bTextBox.Text, 0xEAED);
+                backend.updateROMText(0x9, igt55cTextBox.Text, 0xEAF8);
+                backend.updateROMText(0x9, igt55dTextBox.Text, 0xEB02);
+                backend.updateROMText(0x9, igt56TextBox.Text, 0xEB0C);
+                backend.updateROMText(0x7, igt56bTextBox.Text, 0xEB16);
+                backend.updateROMText(0xa, igt56cTextBox.Text, 0xEB1E);
+                backend.updateROMText(0xa, igt56dTextBox.Text, 0xEB29);
+                backend.updateROMText(0x7, igt57TextBox.Text, 0xEB49);
+                backend.updateROMText(0x8, igt57bTextBox.Text, 0xEB51);
+                backend.updateROMText(0x5, igt57cTextBox.Text, 0xEB5A);
+                backend.updateROMText(0x9, igt58TextBox.Text, 0xEB61);
+                backend.updateROMText(0xa, igt58bTextBox.Text, 0xEB6B);
+                backend.updateROMText(0xa, igt58cTextBox.Text, 0xEB76);
+                backend.updateROMText(0x8, igt58dTextBox.Text, 0xEB81);
+                backend.updateROMText(0x4, igt59TextBox.Text, 0xEB8A);
+                backend.updateROMText(0x8, igt59bTextBox.Text, 0xEB8F);
+                backend.updateROMText(0x8, igt60TextBox.Text, 0xEB98);
+                backend.updateROMText(0x6, igt60bTextBox.Text, 0xEBA1);
+                backend.updateROMText(0x7, igt60cTextBox.Text, 0xEBA8);
+                backend.updateROMText(0x9, igt60dTextBox.Text, 0xEBB0);
+                backend.updateROMText(0xa, igt61TextBox.Text, 0xEBBA);
+                backend.updateROMText(0x7, igt61bTextBox.Text, 0xEBC5);
+                backend.updateROMText(0x7, igt61cTextBox.Text, 0xEBCD);
+                backend.updateROMText(0xa, igt61dTextBox.Text, 0xEBD5);
+                backend.updateROMText(0x7, igt62TextBox.Text, 0xEBE0);
+                backend.updateROMText(0xa, igt62bTextBox.Text, 0xEBE8);
+                backend.updateROMText(0x7, igt62cTextBox.Text, 0xEBF3);
+                backend.updateROMText(0x9, igt62dTextBox.Text, 0xEBFB);
+                backend.updateROMText(0x9, igt63TextBox.Text, 0xEC05);
+                backend.updateROMText(0x8, igt63bTextBox.Text, 0xEC0F);
+                backend.updateROMText(0xa, igt63cTextBox.Text, 0xEC18);
+                backend.updateROMText(0x8, igt64TextBox.Text, 0xEC4E);
+                backend.updateROMText(0x9, igt64bTextBox.Text, 0xEC57);
+                backend.updateROMText(0xa, igt64cTextBox.Text, 0xEC61);
+                backend.updateROMText(0x3, igt64dTextBox.Text, 0xEC6C);
+                backend.updateROMText(0x9, igt65TextBox.Text, 0xEC70);
+                backend.updateROMText(0x8, igt65bTextBox.Text, 0xEC7A);
+                backend.updateROMText(0xa, igt65cTextBox.Text, 0xEC83);
+                backend.updateROMText(0xa, igt66TextBox.Text, 0xEC8E);
+                backend.updateROMText(0x6, igt66bTextBox.Text, 0xEC99);
+                backend.updateROMText(0x8, igt66cTextBox.Text, 0xECA0);
+                backend.updateROMText(0xa, igt66dTextBox.Text, 0xECA9);
+                backend.updateROMText(0x9, igt67TextBox.Text, 0xECB4);
+                backend.updateROMText(0x8, igt67bTextBox.Text, 0xECBE);
+                backend.updateROMText(0x8, igt67cTextBox.Text, 0xECC7);
+                backend.updateROMText(0x9, igt67dTextBox.Text, 0xECD0);
+                backend.updateROMText(0xa, igt68TextBox.Text, 0xECDA);
+                backend.updateROMText(0x5, igt68bTextBox.Text, 0xECE5);
+                backend.updateROMText(0xa, igt68cTextBox.Text, 0xECEB);
+                backend.updateROMText(0xa, igt69TextBox.Text, 0xED11);
+                backend.updateROMText(0x8, igt69bTextBox.Text, 0xED1C);
+                backend.updateROMText(0xa, igt69cTextBox.Text, 0xED25);
+                backend.updateROMText(0x6, igt69dTextBox.Text, 0xED30);
+                backend.updateROMText(0x8, igt70TextBox.Text, 0xED37);
+                backend.updateROMText(0x7, igt70bTextBox.Text, 0xED40);
+                backend.updateROMText(0xa, igt70cTextBox.Text, 0xED48);
+                backend.updateROMText(0x4, igt70dTextBox.Text, 0xED53);
+                backend.updateROMText(0xa, igt71TextBox.Text, 0xED59);
+                backend.updateROMText(0x9, igt71bTextBox.Text, 0xED64);
+                backend.updateROMText(0x8, igt71cTextBox.Text, 0xED6E);
+                backend.updateROMText(0xa, igt71dTextBox.Text, 0xED77);
+                backend.updateROMText(0x9, igt72TextBox.Text, 0xED82);
+                backend.updateROMText(0x8, igt72bTextBox.Text, 0xED8C);
+                backend.updateROMText(0x9, igt72cTextBox.Text, 0xED95);
+                backend.updateROMText(0xa, igt72dTextBox.Text, 0xED9F);
+                backend.updateROMText(0x8, igt73TextBox.Text, 0xEDCF);
+                backend.updateROMText(0xa, igt73bTextBox.Text, 0xEDD8);
+                backend.updateROMText(0xb, igt73cTextBox.Text, 0xEDE3);
+                backend.updateROMText(0x6, igt74TextBox.Text, 0xEDEF);
+                backend.updateROMText(0x7, igt74bTextBox.Text, 0xEDF6);
+                backend.updateROMText(0x7, igt74cTextBox.Text, 0xEDFE);
+                backend.updateROMText(0x7, igt75TextBox.Text, 0xEE06);
+                backend.updateROMText(0x7, igt75bTextBox.Text, 0xEE0E);
+                backend.updateROMText(0x7, igt75cTextBox.Text, 0xEE16);
+                backend.updateROMText(0xa, igt75dTextBox.Text, 0xEE1E);
+                backend.updateROMText(0xa, igt76TextBox.Text, 0xEE48);
+                backend.updateROMText(0x9, igt76bTextBox.Text, 0xEE53);
+                backend.updateROMText(0x6, igt76cTextBox.Text, 0xEE5D);
+                backend.updateROMText(0xa, igt76dTextBox.Text, 0xEE64);
+                backend.updateROMText(0x8, igt77TextBox.Text, 0xEE6F);
+                backend.updateROMText(0x7, igt77bTextBox.Text, 0xEE78);
+                backend.updateROMText(0x9, igt77cTextBox.Text, 0xEE80);
+                backend.updateROMText(0xa, igt77dTextBox.Text, 0xEE8A);
+                backend.updateROMText(0x8, igt78TextBox.Text, 0xEE95);
+                backend.updateROMText(0x9, igt78bTextBox.Text, 0xEE9E);
+                backend.updateROMText(0xa, igt78cTextBox.Text, 0xEEA8);
+                backend.updateROMText(0x5, igt78dTextBox.Text, 0xEEB3);
+                backend.updateROMText(0x6, igt79TextBox.Text, 0xEEB9);
+                backend.updateROMText(0x8, igt79bTextBox.Text, 0xEEC0);
+                backend.updateROMText(0x7, igt79cTextBox.Text, 0xEEC9);
+                backend.updateROMText(0xa, igt79dTextBox.Text, 0xEED1);
+                backend.updateROMText(0x3, igt80TextBox.Text, 0xEEDC);
+                backend.updateROMText(0x7, igt80bTextBox.Text, 0xEEE0);
+                backend.updateROMText(0x8, igt80cTextBox.Text, 0xEEE8);
+                backend.updateROMText(0xa, igt80dTextBox.Text, 0xEEF1);
+                backend.updateROMText(0x8, igt81TextBox.Text, 0xEEFC);
+                backend.updateROMText(0x8, igt81bTextBox.Text, 0xEF05);
+                backend.updateROMText(0x7, igt81cTextBox.Text, 0xEF0E);
+                backend.updateROMText(0x8, igt81dTextBox.Text, 0xEF16);
+                backend.updateROMText(0xa, igt82TextBox.Text, 0xEF40);
+                backend.updateROMText(0x5, igt83TextBox.Text, 0xEF4B);
+                backend.updateROMText(0x9, igt83bTextBox.Text, 0xEF51);
+                backend.updateROMText(0x8, igt84TextBox.Text, 0xEF5B);
+                backend.updateROMText(0x8, igt84bTextBox.Text, 0xEF64);
+                backend.updateROMText(0x9, igt85TextBox.Text, 0xEF6D);
+                backend.updateROMText(0x9, igt85bTextBox.Text, 0xEF77);
+                backend.updateROMText(0x7, igt86TextBox.Text, 0xEFA5);
+                backend.updateROMText(0xa, igt86bTextBox.Text, 0xEFAD);
+                backend.updateROMText(0xa, igt86cTextBox.Text, 0xEFB8);
+                backend.updateROMText(0xa, igt86dTextBox.Text, 0xEFC3);
+                backend.updateROMText(0x9, igt87TextBox.Text, 0xE5B1);
+                backend.updateROMText(0x9, igt87bTextBox.Text, 0xE5BB);
+                backend.updateROMText(0x7, igt87cTextBox.Text, 0xE5C5);
+                backend.updateROMText(0xa, igt87dTextBox.Text, 0xE5CD);
+
+                MessageBox.Show(@"Updated!", @"General Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Close();
         }
-
-
-
-
-
-        private void writeByte()
-        {
-            FileStream fs2 = new FileStream(@filename, FileMode.Open, FileAccess.Write);
-            i = newgcString.Length;
-            x = 0;
-            while (x < i)
-            {
-                zs[x] = newgcString[x].ToString();
-                tempascii = zs[x];
-                encodeZText();
-                ZeldaHexReturn += encodeZText();
-                x++;
-            }
-
-            //setup array
-            zhrArray();
-
-            q = 0;
-            while (q < i)
-            {
-                zd[q] = int.Parse(zsw[q], System.Globalization.NumberStyles.HexNumber);
-                zs_final[q] = zd[q].ToString();
-                zb[q] = byte.Parse(zs_final[q]);
-                q++;
-            }
-
-            fs2.Seek(offset, SeekOrigin.Begin);
-            q = 0;
-            while (q < i)
-            {
-                fs2.WriteByte(zb[q]);
-                q++;
-            }
-            newgcString = "";
-            ZeldaHexReturn = "";
-
-            fs2.Close();
-        }
-
-
-
-
-        private void zhrArray()
-        {
-            //3 is smallest, 0xb is largest
-            //send a value over as stringlength, denote it as i
-
-            if (i > 0x2)
-            {
-                zsw[0] = ZeldaHexReturn[0].ToString() + ZeldaHexReturn[1].ToString();
-                zsw[1] = ZeldaHexReturn[2].ToString() + ZeldaHexReturn[3].ToString();
-                zsw[2] = ZeldaHexReturn[4].ToString() + ZeldaHexReturn[5].ToString();
-            }
-            if (i > 0x3)
-            {
-                zsw[3] = ZeldaHexReturn[6].ToString() + ZeldaHexReturn[7].ToString();
-            }
-            if (i > 0x4)
-            {
-                zsw[4] = ZeldaHexReturn[8].ToString() + ZeldaHexReturn[9].ToString();
-            }
-            if (i > 0x5)
-            {
-                zsw[5] = ZeldaHexReturn[10].ToString() + ZeldaHexReturn[11].ToString();
-            }
-            if (i > 0x6)
-            {
-                zsw[6] = ZeldaHexReturn[12].ToString() + ZeldaHexReturn[13].ToString();
-            }
-            if (i > 0x7)
-            {
-                zsw[7] = ZeldaHexReturn[14].ToString() + ZeldaHexReturn[15].ToString();
-            }
-            if (i > 0x8)
-            {
-                zsw[8] = ZeldaHexReturn[16].ToString() + ZeldaHexReturn[17].ToString();
-            }
-            if (i > 0x9)
-            {
-                zsw[9] = ZeldaHexReturn[18].ToString() + ZeldaHexReturn[19].ToString();
-            }
-            if (i > 0xa)
-            {
-                zsw[10] = ZeldaHexReturn[20].ToString() + ZeldaHexReturn[21].ToString();
-            }
-            if (i > 0xb)
-            {
-                zsw[11] = ZeldaHexReturn[22].ToString() + ZeldaHexReturn[23].ToString();
-            }
-        }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

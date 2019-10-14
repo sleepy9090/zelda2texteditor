@@ -26,10 +26,11 @@ F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2tex
 F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csproj.GenerateResource.Cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Debug\zelda2texteditor.exe
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Debug\zelda2texteditor.pdb
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.csprojAssemblyReference.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.AboutBox1.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormCredits.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormGeneral.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormGeneral2.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormGeneral3.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormRegistrationAndMisc.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormSpells.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Debug\zelda2texteditor.FormLocations.resources
