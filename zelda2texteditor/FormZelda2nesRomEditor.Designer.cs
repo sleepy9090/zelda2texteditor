@@ -39,11 +39,13 @@
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalGameTextIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalGameTextIIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GeneralIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GeneralIIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GeneralIVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GeneralVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RegisistrationAndMiscellanouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,19 +128,19 @@
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.OpenToolStripMenuItem.Text = "&Open";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(100, 6);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.ExitToolStripMenuItem.Text = "&Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -146,11 +148,13 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GeneralToolStripMenuItem,
-            this.generalGameTextIIToolStripMenuItem,
-            this.generalGameTextIIIToolStripMenuItem,
+            this.GeneralIIToolStripMenuItem,
+            this.GeneralIIIToolStripMenuItem,
+            this.GeneralIVToolStripMenuItem,
+            this.GeneralVToolStripMenuItem,
             this.CreditsToolStripMenuItem,
             this.SpellsToolStripMenuItem,
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem,
+            this.RegisistrationAndMiscellanouseToolStripMenuItem,
             this.LocationsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
@@ -163,19 +167,33 @@
             this.GeneralToolStripMenuItem.Text = "&General Game Text";
             this.GeneralToolStripMenuItem.Click += new System.EventHandler(this.GeneralToolStripMenuItem_Click);
             // 
-            // generalGameTextIIToolStripMenuItem
+            // GeneralIIToolStripMenuItem
             // 
-            this.generalGameTextIIToolStripMenuItem.Name = "generalGameTextIIToolStripMenuItem";
-            this.generalGameTextIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.generalGameTextIIToolStripMenuItem.Text = "G&eneral Game Text II";
-            this.generalGameTextIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIToolStripMenuItem_Click);
+            this.GeneralIIToolStripMenuItem.Name = "GeneralIIToolStripMenuItem";
+            this.GeneralIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.GeneralIIToolStripMenuItem.Text = "G&eneral Game Text II";
+            this.GeneralIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIToolStripMenuItem_Click);
             // 
-            // generalGameTextIIIToolStripMenuItem
+            // GeneralIIIToolStripMenuItem
             // 
-            this.generalGameTextIIIToolStripMenuItem.Name = "generalGameTextIIIToolStripMenuItem";
-            this.generalGameTextIIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.generalGameTextIIIToolStripMenuItem.Text = "Ge&neral Game Text III";
-            this.generalGameTextIIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIIToolStripMenuItem_Click);
+            this.GeneralIIIToolStripMenuItem.Name = "GeneralIIIToolStripMenuItem";
+            this.GeneralIIIToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.GeneralIIIToolStripMenuItem.Text = "Ge&neral Game Text III";
+            this.GeneralIIIToolStripMenuItem.Click += new System.EventHandler(this.GeneralIIIToolStripMenuItem_Click);
+            // 
+            // GeneralIVToolStripMenuItem
+            // 
+            this.GeneralIVToolStripMenuItem.Name = "GeneralIVToolStripMenuItem";
+            this.GeneralIVToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.GeneralIVToolStripMenuItem.Text = "Gener&al Game Text IV";
+            this.GeneralIVToolStripMenuItem.Click += new System.EventHandler(this.GeneralIVToolStripMenuItem_Click);
+            // 
+            // GeneralVToolStripMenuItem
+            // 
+            this.GeneralVToolStripMenuItem.Name = "GeneralVToolStripMenuItem";
+            this.GeneralVToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.GeneralVToolStripMenuItem.Text = "General G&ame Text V";
+            this.GeneralVToolStripMenuItem.Click += new System.EventHandler(this.GeneralVToolStripMenuItem_Click);
             // 
             // CreditsToolStripMenuItem
             // 
@@ -191,12 +209,12 @@
             this.SpellsToolStripMenuItem.Text = "&Spells Text";
             this.SpellsToolStripMenuItem.Click += new System.EventHandler(this.SpellsToolStripMenuItem_Click);
             // 
-            // RegisistrationAndMiscellanouseTextToolStripMenuItem
+            // RegisistrationAndMiscellanouseToolStripMenuItem
             // 
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Name = "RegisistrationAndMiscellanouseTextToolStripMenuItem";
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Text = "&Regisistration and Miscellaneous Text";
-            this.RegisistrationAndMiscellanouseTextToolStripMenuItem.Click += new System.EventHandler(this.RegistrationAndMiscTextToolStripMenuItem_Click);
+            this.RegisistrationAndMiscellanouseToolStripMenuItem.Name = "RegisistrationAndMiscellanouseToolStripMenuItem";
+            this.RegisistrationAndMiscellanouseToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.RegisistrationAndMiscellanouseToolStripMenuItem.Text = "&Regisistration and Miscellaneous Text";
+            this.RegisistrationAndMiscellanouseToolStripMenuItem.Click += new System.EventHandler(this.RegistrationAndMiscToolStripMenuItem_Click);
             // 
             // LocationsToolStripMenuItem
             // 
@@ -216,7 +234,7 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.AboutToolStripMenuItem.Text = "&About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -471,7 +489,7 @@
         private System.Windows.Forms.ToolStripMenuItem GeneralToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreditsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpellsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RegisistrationAndMiscellanouseTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RegisistrationAndMiscellanouseToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -490,8 +508,10 @@
         private System.Windows.Forms.TextBox zstoryeditTextBox9;
         private System.Windows.Forms.TextBox zstoryeditTextBox15;
         private System.Windows.Forms.ToolStripMenuItem LocationsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generalGameTextIIToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generalGameTextIIIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GeneralIIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GeneralIIIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GeneralIVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GeneralVToolStripMenuItem;
     }
 }
 

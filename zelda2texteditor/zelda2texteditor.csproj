@@ -54,11 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox1.cs">
+    <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox1.Designer.cs">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Backend.cs" />
     <Compile Include="FormCredits.cs">
@@ -78,6 +78,18 @@
     </Compile>
     <Compile Include="FormGeneral3.Designer.cs">
       <DependentUpon>FormGeneral3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeneral4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeneral4.Designer.cs">
+      <DependentUpon>FormGeneral4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeneral5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeneral5.Designer.cs">
+      <DependentUpon>FormGeneral5.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistrationAndMisc.cs">
       <SubType>Form</SubType>
@@ -111,8 +123,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutBox1.resx">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCredits.resx">
       <DependentUpon>FormCredits.cs</DependentUpon>
@@ -125,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGeneral3.resx">
       <DependentUpon>FormGeneral3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeneral4.resx">
+      <DependentUpon>FormGeneral4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeneral5.resx">
+      <DependentUpon>FormGeneral5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrationAndMisc.resx">
       <DependentUpon>FormRegistrationAndMisc.cs</DependentUpon>
@@ -159,52 +177,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\z1resample.jpg" />
+    <None Include="res\z1resample.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\knight.jpg" />
+    <None Include="res\fairy.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\wall.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\wall2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\wall3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\blueknight.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\fairy.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\knightstatue.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\shlink.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\triforce.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\triforce2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\zelda2boxart.jpg" />
-    <None Include="image\blueknight1.jpg" />
-    <None Include="image\knight1.jpg" />
-    <None Include="image\shlink1.jpg" />
-    <None Include="image\shlinkleft1.jpg" />
-    <None Include="image\wall1.jpg" />
-    <None Include="image\wall21.jpg" />
+    <None Include="res\zelda2boxart.jpg" />
     <Content Include="triforce8bit.ico" />
-    <None Include="image\shlinkleft.jpg" />
-    <None Include="image\z5.jpg" />
-    <None Include="image\spmenu1.jpg" />
-    <Content Include="triforce.ico" />
-    <Content Include="triforce2.ico" />
+    <None Include="res\spmenu1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

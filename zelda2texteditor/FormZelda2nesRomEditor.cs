@@ -31,11 +31,13 @@ namespace zelda2texteditor
         {
             zstoryTextBox.Enabled = false; // Always disabled
             GeneralToolStripMenuItem.Enabled = isControlEnabled;
-            generalGameTextIIToolStripMenuItem.Enabled = isControlEnabled;
-            generalGameTextIIIToolStripMenuItem.Enabled = isControlEnabled;
+            GeneralIIToolStripMenuItem.Enabled = isControlEnabled;
+            GeneralIIIToolStripMenuItem.Enabled = isControlEnabled;
+            GeneralIVToolStripMenuItem.Enabled = isControlEnabled;
+            GeneralVToolStripMenuItem.Enabled = isControlEnabled;
             CreditsToolStripMenuItem.Enabled = isControlEnabled;
             SpellsToolStripMenuItem.Enabled = isControlEnabled;
-            RegisistrationAndMiscellanouseTextToolStripMenuItem.Enabled = isControlEnabled;
+            RegisistrationAndMiscellanouseToolStripMenuItem.Enabled = isControlEnabled;
             LocationsToolStripMenuItem.Enabled = isControlEnabled;
 
             UpdateButton.Enabled = isControlEnabled;
@@ -127,6 +129,13 @@ namespace zelda2texteditor
             // Do nothing
         }
 
+        #region MenuItems
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btfButton_Click(sender, e);
+        }
+
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -153,6 +162,20 @@ namespace zelda2texteditor
             formGeneral3.ShowDialog();
         }
 
+        private void GeneralIVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGeneral4 formGeneral4 = new FormGeneral4(FullFilename);
+
+            formGeneral4.ShowDialog();
+        }
+
+        private void GeneralVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGeneral5 formGeneral5 = new FormGeneral5(FullFilename);
+
+            formGeneral5.ShowDialog();
+        }
+
         private void GameCreditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCredits formCredits = new FormCredits(FullFilename);
@@ -167,7 +190,14 @@ namespace zelda2texteditor
             formSpells.ShowDialog();
         }
 
-        private void RegistrationAndMiscTextToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LocationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLocations formLocations = new FormLocations(FullFilename);
+
+            formLocations.ShowDialog();
+        }
+
+        private void RegistrationAndMiscToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRegistrationAndMisc formRegistrationAndMisc = new FormRegistrationAndMisc(FullFilename);
 
@@ -176,10 +206,12 @@ namespace zelda2texteditor
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 aboutBox = new AboutBox1();
+            AboutBox aboutBox = new AboutBox();
 
             aboutBox.ShowDialog();
         }
+
+        #endregion
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
@@ -202,18 +234,6 @@ namespace zelda2texteditor
             backend.updateROMText(0x1C, zstoryeditTextBox15.Text, 0x16AD8);
 
             MessageBox.Show(@"Updated! Restart program to see changes.", @"Story Text", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            btfButton_Click(sender, e);
-        }
-
-        private void LocationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormLocations formLocations = new FormLocations(FullFilename);
-
-            formLocations.ShowDialog();
         }
     }
 }

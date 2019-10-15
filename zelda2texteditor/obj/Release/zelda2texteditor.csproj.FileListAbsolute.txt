@@ -27,7 +27,6 @@ F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2tex
 F:\Users\sleepy\Documents\visual studio 2013\Projects\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.pdb
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Release\zelda2texteditor.exe
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\bin\Release\zelda2texteditor.pdb
-C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.AboutBox1.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.Properties.Resources.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csproj.GenerateResource.cache
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csproj.CoreCompileInputs.cache
@@ -41,3 +40,6 @@ C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2textedi
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormGeneral3.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormRegistrationAndMisc.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormSpells.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormGeneral4.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormGeneral5.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.AboutBox.resources

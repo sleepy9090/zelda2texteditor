@@ -1,16 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
+﻿/**
+ * @file           AboutBox.cs
+ * @brief          Class for the AboutBox.
+ *
+ * @copyright      Shawn M. Crawford
+ * @date           10/15/2019
+ *
+ * @remark Author  Shawn M. Crawford
+ *
+ * @note           N/A
+ * 
+ */
+using System;
 using System.Reflection;
 using System.Windows.Forms;
 
 namespace zelda2texteditor
 {
-    partial class AboutBox1 : Form
+    partial class AboutBox : Form
     {
-        public AboutBox1()
+        public AboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
