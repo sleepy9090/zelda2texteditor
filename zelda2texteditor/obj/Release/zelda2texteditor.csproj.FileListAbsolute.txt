@@ -43,3 +43,4 @@ C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2textedi
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormGeneral4.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.FormGeneral5.resources
 C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.AboutBox.resources
+C:\workspace_sandbox\zelda2texteditor\zelda2texteditor\obj\Release\zelda2texteditor.csprojAssemblyReference.cache

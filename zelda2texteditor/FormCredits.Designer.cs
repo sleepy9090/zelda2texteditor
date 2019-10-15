@@ -114,119 +114,119 @@
             this.gctextBox28.Location = new System.Drawing.Point(157, 253);
             this.gctextBox28.Name = "gctextBox28";
             this.gctextBox28.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox28.TabIndex = 23;
+            this.gctextBox28.TabIndex = 19;
             // 
             // gctextBox2
             // 
             this.gctextBox2.Location = new System.Drawing.Point(6, 45);
             this.gctextBox2.Name = "gctextBox2";
             this.gctextBox2.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox2.TabIndex = 1;
+            this.gctextBox2.TabIndex = 2;
             // 
             // gctextBox3
             // 
             this.gctextBox3.Location = new System.Drawing.Point(6, 71);
             this.gctextBox3.Name = "gctextBox3";
             this.gctextBox3.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox3.TabIndex = 2;
+            this.gctextBox3.TabIndex = 4;
             // 
             // gctextBox4
             // 
             this.gctextBox4.Location = new System.Drawing.Point(6, 97);
             this.gctextBox4.Name = "gctextBox4";
             this.gctextBox4.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox4.TabIndex = 3;
+            this.gctextBox4.TabIndex = 6;
             // 
             // gctextBox5
             // 
             this.gctextBox5.Location = new System.Drawing.Point(6, 123);
             this.gctextBox5.Name = "gctextBox5";
             this.gctextBox5.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox5.TabIndex = 4;
+            this.gctextBox5.TabIndex = 8;
             // 
             // gctextBox6
             // 
             this.gctextBox6.Location = new System.Drawing.Point(6, 149);
             this.gctextBox6.Name = "gctextBox6";
             this.gctextBox6.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox6.TabIndex = 5;
+            this.gctextBox6.TabIndex = 10;
             // 
             // gctextBox7
             // 
             this.gctextBox7.Location = new System.Drawing.Point(6, 175);
             this.gctextBox7.Name = "gctextBox7";
             this.gctextBox7.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox7.TabIndex = 6;
+            this.gctextBox7.TabIndex = 12;
             // 
             // gctextBox8
             // 
             this.gctextBox8.Location = new System.Drawing.Point(6, 201);
             this.gctextBox8.Name = "gctextBox8";
             this.gctextBox8.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox8.TabIndex = 7;
+            this.gctextBox8.TabIndex = 14;
             // 
             // gctextBox9
             // 
             this.gctextBox9.Location = new System.Drawing.Point(6, 227);
             this.gctextBox9.Name = "gctextBox9";
             this.gctextBox9.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox9.TabIndex = 8;
+            this.gctextBox9.TabIndex = 16;
             // 
             // gctextBox10
             // 
             this.gctextBox10.Location = new System.Drawing.Point(6, 253);
             this.gctextBox10.Name = "gctextBox10";
             this.gctextBox10.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox10.TabIndex = 9;
+            this.gctextBox10.TabIndex = 18;
             // 
             // gctextBox11
             // 
             this.gctextBox11.Location = new System.Drawing.Point(6, 279);
             this.gctextBox11.Name = "gctextBox11";
             this.gctextBox11.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox11.TabIndex = 10;
+            this.gctextBox11.TabIndex = 20;
             // 
             // gctextBox12
             // 
             this.gctextBox12.Location = new System.Drawing.Point(6, 305);
             this.gctextBox12.Name = "gctextBox12";
             this.gctextBox12.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox12.TabIndex = 11;
+            this.gctextBox12.TabIndex = 22;
             // 
             // gctextBox13
             // 
             this.gctextBox13.Location = new System.Drawing.Point(6, 331);
             this.gctextBox13.Name = "gctextBox13";
             this.gctextBox13.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox13.TabIndex = 12;
+            this.gctextBox13.TabIndex = 24;
             // 
             // gctextBox14
             // 
             this.gctextBox14.Location = new System.Drawing.Point(6, 357);
             this.gctextBox14.Name = "gctextBox14";
             this.gctextBox14.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox14.TabIndex = 13;
+            this.gctextBox14.TabIndex = 26;
             // 
             // gctextBox15
             // 
             this.gctextBox15.Location = new System.Drawing.Point(157, 279);
             this.gctextBox15.Name = "gctextBox15";
             this.gctextBox15.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox15.TabIndex = 24;
+            this.gctextBox15.TabIndex = 21;
             // 
             // gctextBox16
             // 
             this.gctextBox16.Location = new System.Drawing.Point(157, 305);
             this.gctextBox16.Name = "gctextBox16";
             this.gctextBox16.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox16.TabIndex = 25;
+            this.gctextBox16.TabIndex = 23;
             // 
             // gctextBox17
             // 
             this.gctextBox17.Location = new System.Drawing.Point(157, 331);
             this.gctextBox17.Name = "gctextBox17";
             this.gctextBox17.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox17.TabIndex = 26;
+            this.gctextBox17.TabIndex = 25;
             // 
             // gctextBox18
             // 
@@ -240,63 +240,63 @@
             this.gctextBox19.Location = new System.Drawing.Point(157, 19);
             this.gctextBox19.Name = "gctextBox19";
             this.gctextBox19.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox19.TabIndex = 14;
+            this.gctextBox19.TabIndex = 1;
             // 
             // gctextBox20
             // 
             this.gctextBox20.Location = new System.Drawing.Point(157, 45);
             this.gctextBox20.Name = "gctextBox20";
             this.gctextBox20.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox20.TabIndex = 15;
+            this.gctextBox20.TabIndex = 3;
             // 
             // gctextBox21
             // 
             this.gctextBox21.Location = new System.Drawing.Point(157, 71);
             this.gctextBox21.Name = "gctextBox21";
             this.gctextBox21.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox21.TabIndex = 16;
+            this.gctextBox21.TabIndex = 5;
             // 
             // gctextBox22
             // 
             this.gctextBox22.Location = new System.Drawing.Point(157, 97);
             this.gctextBox22.Name = "gctextBox22";
             this.gctextBox22.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox22.TabIndex = 17;
+            this.gctextBox22.TabIndex = 7;
             // 
             // gctextBox23
             // 
             this.gctextBox23.Location = new System.Drawing.Point(157, 123);
             this.gctextBox23.Name = "gctextBox23";
             this.gctextBox23.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox23.TabIndex = 18;
+            this.gctextBox23.TabIndex = 9;
             // 
             // gctextBox24
             // 
             this.gctextBox24.Location = new System.Drawing.Point(157, 149);
             this.gctextBox24.Name = "gctextBox24";
             this.gctextBox24.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox24.TabIndex = 19;
+            this.gctextBox24.TabIndex = 11;
             // 
             // gctextBox25
             // 
             this.gctextBox25.Location = new System.Drawing.Point(157, 175);
             this.gctextBox25.Name = "gctextBox25";
             this.gctextBox25.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox25.TabIndex = 20;
+            this.gctextBox25.TabIndex = 13;
             // 
             // gctextBox26
             // 
             this.gctextBox26.Location = new System.Drawing.Point(157, 201);
             this.gctextBox26.Name = "gctextBox26";
             this.gctextBox26.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox26.TabIndex = 21;
+            this.gctextBox26.TabIndex = 15;
             // 
             // gctextBox27
             // 
             this.gctextBox27.Location = new System.Drawing.Point(157, 227);
             this.gctextBox27.Name = "gctextBox27";
             this.gctextBox27.Size = new System.Drawing.Size(145, 20);
-            this.gctextBox27.TabIndex = 22;
+            this.gctextBox27.TabIndex = 17;
             // 
             // gctextBox1
             // 

@@ -104,294 +104,294 @@
             this.igt83bTextBox.Location = new System.Drawing.Point(6, 123);
             this.igt83bTextBox.Name = "igt83bTextBox";
             this.igt83bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt83bTextBox.TabIndex = 89;
+            this.igt83bTextBox.TabIndex = 20;
             // 
             // igt85bTextBox
             // 
             this.igt85bTextBox.Location = new System.Drawing.Point(430, 253);
             this.igt85bTextBox.Name = "igt85bTextBox";
             this.igt85bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt85bTextBox.TabIndex = 283;
+            this.igt85bTextBox.TabIndex = 49;
             // 
             // igt84bTextBox
             // 
             this.igt84bTextBox.Location = new System.Drawing.Point(324, 71);
             this.igt84bTextBox.Name = "igt84bTextBox";
             this.igt84bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt84bTextBox.TabIndex = 180;
+            this.igt84bTextBox.TabIndex = 13;
             // 
             // igt84TextBox
             // 
             this.igt84TextBox.Location = new System.Drawing.Point(218, 71);
             this.igt84TextBox.Name = "igt84TextBox";
             this.igt84TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt84TextBox.TabIndex = 179;
+            this.igt84TextBox.TabIndex = 12;
             // 
             // igt85TextBox
             // 
             this.igt85TextBox.Location = new System.Drawing.Point(324, 253);
             this.igt85TextBox.Name = "igt85TextBox";
             this.igt85TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt85TextBox.TabIndex = 282;
+            this.igt85TextBox.TabIndex = 48;
             // 
             // igt83TextBox
             // 
             this.igt83TextBox.Location = new System.Drawing.Point(6, 97);
             this.igt83TextBox.Name = "igt83TextBox";
             this.igt83TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt83TextBox.TabIndex = 88;
+            this.igt83TextBox.TabIndex = 15;
             // 
             // igt74cTextBox
             // 
             this.igt74cTextBox.Location = new System.Drawing.Point(112, 97);
             this.igt74cTextBox.Name = "igt74cTextBox";
             this.igt74cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt74cTextBox.TabIndex = 252;
+            this.igt74cTextBox.TabIndex = 16;
             // 
             // igt74bTextBox
             // 
             this.igt74bTextBox.Location = new System.Drawing.Point(112, 331);
             this.igt74bTextBox.Name = "igt74bTextBox";
             this.igt74bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt74bTextBox.TabIndex = 251;
+            this.igt74bTextBox.TabIndex = 61;
             // 
             // igt73cTextBox
             // 
             this.igt73cTextBox.Location = new System.Drawing.Point(218, 97);
             this.igt73cTextBox.Name = "igt73cTextBox";
             this.igt73cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt73cTextBox.TabIndex = 249;
+            this.igt73cTextBox.TabIndex = 17;
             // 
             // igt73bTextBox
             // 
             this.igt73bTextBox.Location = new System.Drawing.Point(6, 305);
             this.igt73bTextBox.Name = "igt73bTextBox";
             this.igt73bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt73bTextBox.TabIndex = 248;
+            this.igt73bTextBox.TabIndex = 55;
             // 
             // igt74TextBox
             // 
             this.igt74TextBox.Location = new System.Drawing.Point(6, 331);
             this.igt74TextBox.Name = "igt74TextBox";
             this.igt74TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt74TextBox.TabIndex = 250;
+            this.igt74TextBox.TabIndex = 60;
             // 
             // igt73TextBox
             // 
             this.igt73TextBox.Location = new System.Drawing.Point(430, 279);
             this.igt73TextBox.Name = "igt73TextBox";
             this.igt73TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt73TextBox.TabIndex = 247;
+            this.igt73TextBox.TabIndex = 54;
             // 
             // igt68cTextBox
             // 
             this.igt68cTextBox.Location = new System.Drawing.Point(324, 19);
             this.igt68cTextBox.Name = "igt68cTextBox";
             this.igt68cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt68cTextBox.TabIndex = 230;
+            this.igt68cTextBox.TabIndex = 3;
             // 
             // igt65cTextBox
             // 
             this.igt65cTextBox.Location = new System.Drawing.Point(430, 71);
             this.igt65cTextBox.Name = "igt65cTextBox";
             this.igt65cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt65cTextBox.TabIndex = 219;
+            this.igt65cTextBox.TabIndex = 14;
             // 
             // igt65bTextBox
             // 
             this.igt65bTextBox.Location = new System.Drawing.Point(324, 305);
             this.igt65bTextBox.Name = "igt65bTextBox";
             this.igt65bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt65bTextBox.TabIndex = 218;
+            this.igt65bTextBox.TabIndex = 58;
             // 
             // igt63cTextBox
             // 
             this.igt63cTextBox.Location = new System.Drawing.Point(218, 253);
             this.igt63cTextBox.Name = "igt63cTextBox";
             this.igt63cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt63cTextBox.TabIndex = 212;
+            this.igt63cTextBox.TabIndex = 47;
             // 
             // igt63bTextBox
             // 
             this.igt63bTextBox.Location = new System.Drawing.Point(430, 305);
             this.igt63bTextBox.Name = "igt63bTextBox";
             this.igt63bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt63bTextBox.TabIndex = 211;
+            this.igt63bTextBox.TabIndex = 59;
             // 
             // igt59bTextBox
             // 
             this.igt59bTextBox.Location = new System.Drawing.Point(324, 201);
             this.igt59bTextBox.Name = "igt59bTextBox";
             this.igt59bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt59bTextBox.TabIndex = 197;
+            this.igt59bTextBox.TabIndex = 38;
             // 
             // igt57cTextBox
             // 
             this.igt57cTextBox.Location = new System.Drawing.Point(430, 149);
             this.igt57cTextBox.Name = "igt57cTextBox";
             this.igt57cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt57cTextBox.TabIndex = 191;
+            this.igt57cTextBox.TabIndex = 29;
             // 
             // igt57bTextBox
             // 
             this.igt57bTextBox.Location = new System.Drawing.Point(112, 45);
             this.igt57bTextBox.Name = "igt57bTextBox";
             this.igt57bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt57bTextBox.TabIndex = 190;
+            this.igt57bTextBox.TabIndex = 6;
             // 
             // igt54bTextBox
             // 
             this.igt54bTextBox.Location = new System.Drawing.Point(430, 97);
             this.igt54bTextBox.Name = "igt54bTextBox";
             this.igt54bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt54bTextBox.TabIndex = 174;
+            this.igt54bTextBox.TabIndex = 19;
             // 
             // igt53cTextBox
             // 
             this.igt53cTextBox.Location = new System.Drawing.Point(324, 123);
             this.igt53cTextBox.Name = "igt53cTextBox";
             this.igt53cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt53cTextBox.TabIndex = 172;
+            this.igt53cTextBox.TabIndex = 23;
             // 
             // igt53bTextBox
             // 
             this.igt53bTextBox.Location = new System.Drawing.Point(218, 123);
             this.igt53bTextBox.Name = "igt53bTextBox";
             this.igt53bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt53bTextBox.TabIndex = 171;
+            this.igt53bTextBox.TabIndex = 22;
             // 
             // igt52cTextBox
             // 
             this.igt52cTextBox.Location = new System.Drawing.Point(218, 227);
             this.igt52cTextBox.Name = "igt52cTextBox";
             this.igt52cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt52cTextBox.TabIndex = 169;
+            this.igt52cTextBox.TabIndex = 42;
             // 
             // igt52bTextBox
             // 
             this.igt52bTextBox.Location = new System.Drawing.Point(6, 149);
             this.igt52bTextBox.Name = "igt52bTextBox";
             this.igt52bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt52bTextBox.TabIndex = 168;
+            this.igt52bTextBox.TabIndex = 25;
             // 
             // igt51bTextBox
             // 
             this.igt51bTextBox.Location = new System.Drawing.Point(112, 175);
             this.igt51bTextBox.Name = "igt51bTextBox";
             this.igt51bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt51bTextBox.TabIndex = 166;
+            this.igt51bTextBox.TabIndex = 31;
             // 
             // igt50cTextBox
             // 
             this.igt50cTextBox.Location = new System.Drawing.Point(324, 227);
             this.igt50cTextBox.Name = "igt50cTextBox";
             this.igt50cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt50cTextBox.TabIndex = 164;
+            this.igt50cTextBox.TabIndex = 43;
             // 
             // igt50bTextBox
             // 
             this.igt50bTextBox.Location = new System.Drawing.Point(430, 175);
             this.igt50bTextBox.Name = "igt50bTextBox";
             this.igt50bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt50bTextBox.TabIndex = 163;
+            this.igt50bTextBox.TabIndex = 34;
             // 
             // igt49bTextBox
             // 
             this.igt49bTextBox.Location = new System.Drawing.Point(218, 279);
             this.igt49bTextBox.Name = "igt49bTextBox";
             this.igt49bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt49bTextBox.TabIndex = 161;
+            this.igt49bTextBox.TabIndex = 52;
             // 
             // igt46bTextBox
             // 
             this.igt46bTextBox.Location = new System.Drawing.Point(6, 227);
             this.igt46bTextBox.Name = "igt46bTextBox";
             this.igt46bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt46bTextBox.TabIndex = 157;
+            this.igt46bTextBox.TabIndex = 40;
             // 
             // igt27cTextBox
             // 
             this.igt27cTextBox.Location = new System.Drawing.Point(6, 201);
             this.igt27cTextBox.Name = "igt27cTextBox";
             this.igt27cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt27cTextBox.TabIndex = 87;
+            this.igt27cTextBox.TabIndex = 35;
             // 
             // igt27bTextBox
             // 
             this.igt27bTextBox.Location = new System.Drawing.Point(218, 175);
             this.igt27bTextBox.Name = "igt27bTextBox";
             this.igt27bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt27bTextBox.TabIndex = 86;
+            this.igt27bTextBox.TabIndex = 32;
             // 
             // igt23bTextBox
             // 
             this.igt23bTextBox.Location = new System.Drawing.Point(430, 227);
             this.igt23bTextBox.Name = "igt23bTextBox";
             this.igt23bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt23bTextBox.TabIndex = 72;
+            this.igt23bTextBox.TabIndex = 44;
             // 
             // igt21bTextBox
             // 
             this.igt21bTextBox.Location = new System.Drawing.Point(112, 227);
             this.igt21bTextBox.Name = "igt21bTextBox";
             this.igt21bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt21bTextBox.TabIndex = 66;
+            this.igt21bTextBox.TabIndex = 41;
             // 
             // igt9cTextBox
             // 
             this.igt9cTextBox.Location = new System.Drawing.Point(430, 331);
             this.igt9cTextBox.Name = "igt9cTextBox";
             this.igt9cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt9cTextBox.TabIndex = 21;
+            this.igt9cTextBox.TabIndex = 64;
             // 
             // igt9bTextBox
             // 
             this.igt9bTextBox.Location = new System.Drawing.Point(324, 331);
             this.igt9bTextBox.Name = "igt9bTextBox";
             this.igt9bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt9bTextBox.TabIndex = 20;
+            this.igt9bTextBox.TabIndex = 63;
             // 
             // igt6bTextBox
             // 
             this.igt6bTextBox.Location = new System.Drawing.Point(112, 253);
             this.igt6bTextBox.Name = "igt6bTextBox";
             this.igt6bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt6bTextBox.TabIndex = 13;
+            this.igt6bTextBox.TabIndex = 46;
             // 
             // igt5bTextBox
             // 
             this.igt5bTextBox.Location = new System.Drawing.Point(218, 201);
             this.igt5bTextBox.Name = "igt5bTextBox";
             this.igt5bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt5bTextBox.TabIndex = 11;
+            this.igt5bTextBox.TabIndex = 37;
             // 
             // igt4bTextBox
             // 
             this.igt4bTextBox.Location = new System.Drawing.Point(324, 149);
             this.igt4bTextBox.Name = "igt4bTextBox";
             this.igt4bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt4bTextBox.TabIndex = 9;
+            this.igt4bTextBox.TabIndex = 28;
             // 
             // igt3cTextBox
             // 
             this.igt3cTextBox.Location = new System.Drawing.Point(112, 71);
             this.igt3cTextBox.Name = "igt3cTextBox";
             this.igt3cTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt3cTextBox.TabIndex = 7;
+            this.igt3cTextBox.TabIndex = 11;
             // 
             // igt3bTextBox
             // 
             this.igt3bTextBox.Location = new System.Drawing.Point(6, 71);
             this.igt3bTextBox.Name = "igt3bTextBox";
             this.igt3bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt3bTextBox.TabIndex = 6;
+            this.igt3bTextBox.TabIndex = 10;
             // 
             // igt2bTextBox
             // 
             this.igt2bTextBox.Location = new System.Drawing.Point(218, 45);
             this.igt2bTextBox.Name = "igt2bTextBox";
             this.igt2bTextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt2bTextBox.TabIndex = 4;
+            this.igt2bTextBox.TabIndex = 7;
             // 
             // igt1bTextBox
             // 
@@ -412,7 +412,7 @@
             this.updateButton.Location = new System.Drawing.Point(455, 357);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 23);
-            this.updateButton.TabIndex = 284;
+            this.updateButton.TabIndex = 65;
             this.updateButton.Text = "&Update";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -422,98 +422,98 @@
             this.igt49TextBox.Location = new System.Drawing.Point(112, 279);
             this.igt49TextBox.Name = "igt49TextBox";
             this.igt49TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt49TextBox.TabIndex = 160;
+            this.igt49TextBox.TabIndex = 51;
             // 
             // igt27TextBox
             // 
             this.igt27TextBox.Location = new System.Drawing.Point(112, 149);
             this.igt27TextBox.Name = "igt27TextBox";
             this.igt27TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt27TextBox.TabIndex = 85;
+            this.igt27TextBox.TabIndex = 26;
             // 
             // igt23TextBox
             // 
             this.igt23TextBox.Location = new System.Drawing.Point(324, 279);
             this.igt23TextBox.Name = "igt23TextBox";
             this.igt23TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt23TextBox.TabIndex = 71;
+            this.igt23TextBox.TabIndex = 53;
             // 
             // igt21TextBox
             // 
             this.igt21TextBox.Location = new System.Drawing.Point(6, 279);
             this.igt21TextBox.Name = "igt21TextBox";
             this.igt21TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt21TextBox.TabIndex = 65;
+            this.igt21TextBox.TabIndex = 50;
             // 
             // igt65TextBox
             // 
             this.igt65TextBox.Location = new System.Drawing.Point(218, 305);
             this.igt65TextBox.Name = "igt65TextBox";
             this.igt65TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt65TextBox.TabIndex = 217;
+            this.igt65TextBox.TabIndex = 57;
             // 
             // igt63TextBox
             // 
             this.igt63TextBox.Location = new System.Drawing.Point(112, 305);
             this.igt63TextBox.Name = "igt63TextBox";
             this.igt63TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt63TextBox.TabIndex = 210;
+            this.igt63TextBox.TabIndex = 56;
             // 
             // igt59TextBox
             // 
             this.igt59TextBox.Location = new System.Drawing.Point(430, 19);
             this.igt59TextBox.Name = "igt59TextBox";
             this.igt59TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt59TextBox.TabIndex = 196;
+            this.igt59TextBox.TabIndex = 4;
             // 
             // igt57TextBox
             // 
             this.igt57TextBox.Location = new System.Drawing.Point(6, 45);
             this.igt57TextBox.Name = "igt57TextBox";
             this.igt57TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt57TextBox.TabIndex = 189;
+            this.igt57TextBox.TabIndex = 5;
             // 
             // igt54TextBox
             // 
             this.igt54TextBox.Location = new System.Drawing.Point(324, 97);
             this.igt54TextBox.Name = "igt54TextBox";
             this.igt54TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt54TextBox.TabIndex = 173;
+            this.igt54TextBox.TabIndex = 18;
             // 
             // igt53TextBox
             // 
             this.igt53TextBox.Location = new System.Drawing.Point(112, 123);
             this.igt53TextBox.Name = "igt53TextBox";
             this.igt53TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt53TextBox.TabIndex = 170;
+            this.igt53TextBox.TabIndex = 21;
             // 
             // igt52TextBox
             // 
             this.igt52TextBox.Location = new System.Drawing.Point(430, 123);
             this.igt52TextBox.Name = "igt52TextBox";
             this.igt52TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt52TextBox.TabIndex = 167;
+            this.igt52TextBox.TabIndex = 24;
             // 
             // igt50TextBox
             // 
             this.igt50TextBox.Location = new System.Drawing.Point(324, 175);
             this.igt50TextBox.Name = "igt50TextBox";
             this.igt50TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt50TextBox.TabIndex = 162;
+            this.igt50TextBox.TabIndex = 33;
             // 
             // igt51TextBox
             // 
             this.igt51TextBox.Location = new System.Drawing.Point(6, 175);
             this.igt51TextBox.Name = "igt51TextBox";
             this.igt51TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt51TextBox.TabIndex = 165;
+            this.igt51TextBox.TabIndex = 30;
             // 
             // igt46TextBox
             // 
             this.igt46TextBox.Location = new System.Drawing.Point(430, 201);
             this.igt46TextBox.Name = "igt46TextBox";
             this.igt46TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt46TextBox.TabIndex = 156;
+            this.igt46TextBox.TabIndex = 39;
             // 
             // igt1TextBox
             // 
@@ -527,42 +527,42 @@
             this.igt3TextBox.Location = new System.Drawing.Point(430, 45);
             this.igt3TextBox.Name = "igt3TextBox";
             this.igt3TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt3TextBox.TabIndex = 5;
+            this.igt3TextBox.TabIndex = 9;
             // 
             // igt2TextBox
             // 
             this.igt2TextBox.Location = new System.Drawing.Point(324, 45);
             this.igt2TextBox.Name = "igt2TextBox";
             this.igt2TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt2TextBox.TabIndex = 3;
+            this.igt2TextBox.TabIndex = 8;
             // 
             // igt4TextBox
             // 
             this.igt4TextBox.Location = new System.Drawing.Point(218, 149);
             this.igt4TextBox.Name = "igt4TextBox";
             this.igt4TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt4TextBox.TabIndex = 8;
+            this.igt4TextBox.TabIndex = 27;
             // 
             // igt5TextBox
             // 
             this.igt5TextBox.Location = new System.Drawing.Point(112, 201);
             this.igt5TextBox.Name = "igt5TextBox";
             this.igt5TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt5TextBox.TabIndex = 10;
+            this.igt5TextBox.TabIndex = 36;
             // 
             // igt6TextBox
             // 
             this.igt6TextBox.Location = new System.Drawing.Point(6, 253);
             this.igt6TextBox.Name = "igt6TextBox";
             this.igt6TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt6TextBox.TabIndex = 12;
+            this.igt6TextBox.TabIndex = 45;
             // 
             // igt9TextBox
             // 
             this.igt9TextBox.Location = new System.Drawing.Point(218, 331);
             this.igt9TextBox.Name = "igt9TextBox";
             this.igt9TextBox.Size = new System.Drawing.Size(100, 20);
-            this.igt9TextBox.TabIndex = 19;
+            this.igt9TextBox.TabIndex = 62;
             // 
             // groupBox2
             // 

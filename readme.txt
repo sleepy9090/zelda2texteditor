@@ -1,23 +1,27 @@
+# zelda2texteditor
+Text editor for the NES ROM Zelda II - The Adventure of Link
+
 Zelda II NES ROM Text Editor
-Programmed by: Shawn M. Crawford
-Last Update: June 25th, 2016 in C#
-Latest Build: 1.2.1.32055
+Programmed by: Shawn M. Crawford [sleepy]
+Last Update: October 15th, 2019
+Latest Build: 2.0.0.24468
  ----
 
 Features:
-	* edit every line of text in the game (spells, character text, registration screen, end credits, story, etc, etc)
+	* edit every line of text in the game (spells, character text, registration screen, end credits, story, and general game)
 	* this version only works with US rom (Zelda 2 - The Adventure of Link (U).nes), might work with other versions but untested because it relies on offsets in the ROM
 
 Requires:
-	* .Net Framework 3.5, tested on windows 8/8.1 x64, Windows 7 x64, Windows Vista x32, and Windows XP x32
+	* .Net Framework 3.5, tested on Windows 10/8/8.1/7 x64, Windows Vista x32, and Windows XP x32
 
 Usage:
 	*Open the Rom (Zelda 2 - The Adventure of Link (U).nes), change text, click update, make sure you have a backup in case something breaks.
+	*Recommended to change a section at a time, then backup the ROM, and verify the changes.
 	*Feel free to email bugs to sleepy3d@gmail.com
 
-TODO:
-	* refactor more form code to use backend class, clean up junk code
-        * Fix tab order
+2.0.0.24468 October 15th, 2019
+ ----
+- Completely re-factored code
 
 1.2.1.32055 June 25th, 2016
  ----
