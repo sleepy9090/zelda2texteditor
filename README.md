@@ -1,5 +1,12 @@
 # zelda2texteditor
-Text editor for the NES ROM Zelda II - The Adventure of Link
+Text editor for the NES ROM Zelda II - The Adventure of Link<br/>
+
+<img width="759" height="487" alt="image" src="https://github.com/user-attachments/assets/dafa0d77-91b2-4cfa-b856-9e3cecf42f58" /><br/>
+
+<img width="566" height="438" alt="image" src="https://github.com/user-attachments/assets/cc89c052-8dac-4820-9fe3-41b382510b9c" /><br/>
+
+<img width="455" height="310" alt="image" src="https://github.com/user-attachments/assets/0f7323af-c35c-48fc-82bd-56711718a586" /><br/>
+
 
 Zelda II NES ROM Text Editor
 Programmed by: Shawn M. Crawford [sleepy]
